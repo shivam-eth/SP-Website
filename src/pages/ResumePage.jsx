@@ -260,25 +260,25 @@ const ResumePage = () => {
       name: "Tomi",
       description: "Tomi is a DePin-focused web3 ecosystem that offers a comprehensive decentralised ecosystem with true ownership, strong privacy, and revolutionary DePIN technology.",
       features: ["DePin", "Developer Documentation", "Project Planning", "Testnet Launch", "Roadmap Planning"],
-      link: "#"
+      link: "https://tomi.com/storage"
     },
     {
       name: "5irechain",
       description: "5ireChain is a layer-1 EVM compatible blockchain along with WASM compatibility. It is the world's first sustainable blockchain. Over 50M+ Transactions on testnet.",
       features: ["Research", "Agile", "DSM", "User Guides", "Smart Contract", "Tokenomics", "Testnet", "Demos", "USDC Integration"],
-      link: "#"
+      link: "https://5ire.org/home"
     },
     {
       name: "Shido",
       description: "Shido is a Decentralized Layer 1 Blockchain focused on empowering the interoperability in crypto. Ecosystem Shidoscan, mobile application, DEX, staking platform. Achieved over 10,000 TPS.",
       features: ["Research", "SDLC", "FRD", "BRD", "Proposal", "Tokenomics", "Testnet"],
-      link: "#"
+      link: "https://shido.io/"
     },
     {
       name: "Hydro",
       description: "Hydro enables publishers to monetise the \"time spent\" by users browsing on their platform, thereby reducing their dependence on ads. The Hydro ecosystem utilises the SUI blockchain for data recording and tracking.",
       features: ["Research", "Scrum", "DSM", "Client Walkthroughs", "Sui Ecosystem"],
-      link: "#"
+      link: "https://www.hydro.online/"
     }
   ];
 
@@ -287,13 +287,13 @@ const ResumePage = () => {
       title: "Tomi DePin Ecosystem",
       description: "Led the product strategy and development of decentralized wallet and storage solution, driving the successful launch of its 'tStorage' product. Conducted market research & competitive analysis to refine product positioning.",
       techStack: ["ReactJs", "GoLang", "IPFS", "Swagger", "Postgres"],
-      link: "#"
+      link: "https://tomi.com/storage"
     },
     {
       title: "5ireChain Ecosystem", 
       description: "Led the development of the layer 1 blockchain development. Developed functional flow and process design for decentralised applications within the 5ire ecosystem. Analyzed ESG regulatory requirements to ensure compliance within the blockchain's consensus mechanism.",
       techStack: ["NextJs", "NodeJs", "Redis", "Wallet Extension", "RabbitMQ", "Cross-Chain Bridge", "Nominator Application", "Postgres"],
-      link: "#"
+      link: "https://5ire.org/home"
     },
     {
       title: "BlockDAG X1 Application",
@@ -305,17 +305,19 @@ const ResumePage = () => {
       title: "Vine Labs Ecosystem",
       description: "An scalable modular \"Layer 0\" protocol that acts as an incubator for metaverses and open world space supported supported with multiple app chains to improve scalability. Facilitated requirements gathering sessions with cross-functional teams to ensure the platform's modularity and scalability met evolving market demands. Managed cross-chain bridge and staking DApp integrations",
       techStack: ["ROR", "NodeJs", "ReactJs", "Postgres"],
-      link: "#"
+      link: "https://www.vinelayer0.com/"
     },
     {
       title: "Digital Wallet Application - Tabuk",
       description: "Digital Documentation is an application created exclusively for the Saudi government, concentrating on the Tabuk region. It's a Blockchain-based app for issuing and storing citizens' critical documents, utilizing IPFS for decentralized storage. Conducted user needs assessment for non-technical users, leading to a 30% increase in document accessibility. Assessed project risks and suggested mitigation strategies for data security in IPFS storage",
-      link: "#"
+      techStack: ["Kotlin", "NodeJs", "iOS",],
+      link: "https://apps.apple.com/in/app/digital-wallet-tabuk/id6466400505"
     },
     {
       title: "Shido DeFi Ecosystem",
       description: "Shido is a decentralized finance (DeFi) project offering innovative cross-chain solutions for seamless and secure cryptocurrency transactions. Collaborated with cross-functional teams to develop and refine product specifications for Shido's cross-chain solutions, enhancing interoperability and user experience. Conducted in-depth market research to identify emerging trends in the DeFi space, directly influencing Shido's strategic roadmap and product offerings.",
-      link: "#"
+      techStack: ["ReactJs", "NodeJs", "NextJs",],
+      link: "https://app.shido.io/"
     }
   ];
 
