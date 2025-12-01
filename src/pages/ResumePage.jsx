@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowLeft, 
-  Download, 
-  Phone, 
-  Mail, 
-  Linkedin, 
+import {
+  ArrowLeft,
+  Download,
+  Phone,
+  Mail,
+  Linkedin,
   Twitter,
   User,
   Briefcase,
@@ -18,11 +18,6 @@ import {
   MapPin,
   ExternalLink,
   Award,
-  Target,
-  Zap,
-  TrendingUp,
-  Users,
-  Clock,
   CheckCircle,
   Menu,
   X
@@ -30,6 +25,17 @@ import {
 
 // Import resume PDF
 import resumePDF from '../assets/Shivam_Pandiya_PM.pdf';
+
+// Import data
+import {
+  summary,
+  experiences,
+  projects,
+  skills,
+  education,
+  certifications,
+  portfolioItems
+} from '../data/resumeData';
 
 const ResumePage = () => {
   const [activeSection, setActiveSection] = useState('summary');
@@ -43,7 +49,7 @@ const ResumePage = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
@@ -85,7 +91,7 @@ const ResumePage = () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Draw hexagon around larger nodes
         if (this.size > 2) {
           ctx.strokeStyle = '#00D4FF';
@@ -101,7 +107,7 @@ const ResumePage = () => {
           ctx.closePath();
           ctx.stroke();
         }
-        
+
         ctx.restore();
       }
     }
@@ -155,7 +161,7 @@ const ResumePage = () => {
   // Scroll spy for navigation
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['summary', 'experience', 'projects', 'skills', 'education', 'certifications', 'portfolio'];
+      const sections = ['summary', 'experience', 'projects', 'skills', 'certifications', 'education', 'portfolio'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -180,7 +186,7 @@ const ResumePage = () => {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -205,127 +211,9 @@ const ResumePage = () => {
     { id: 'experience', icon: <Briefcase className="w-4 h-4 md:w-5 md:h-5" />, label: 'Experience' },
     { id: 'projects', icon: <Code className="w-4 h-4 md:w-5 md:h-5" />, label: 'Projects' },
     { id: 'skills', icon: <Star className="w-4 h-4 md:w-5 md:h-5" />, label: 'Skills' },
-    { id: 'education', icon: <GraduationCap className="w-4 h-4 md:w-5 md:h-5" />, label: 'Education' },
     { id: 'certifications', icon: <Award className="w-4 h-4 md:w-5 md:h-5" />, label: 'Certifications' },
+    { id: 'education', icon: <GraduationCap className="w-4 h-4 md:w-5 md:h-5" />, label: 'Education' },
     { id: 'portfolio', icon: <FolderOpen className="w-4 h-4 md:w-5 md:h-5" />, label: 'Portfolio' },
-  ];
-
-  const experiences = [
-    {
-      company: "Antier Solutions",
-      position: "Product Manager",
-      duration: "July 2021 - Present",
-      location: "Chandigarh, India",
-      achievements: [
-        "Defined and executed product roadmaps for multiple web3 ecosystems, aligning business objectives with development goals",
-        "Led cross-functional teams to design, develop, and launch scalable Web3 applications",
-        "Conducted research for varied tokenomics and integrated blockchain protocols into multiple DeFi platforms",
-        "Collaborated with UX/UI teams to enhance user experience and onboarding flows for decentralized platforms",
-        "Directed the development and launch of blockchains, achieving significant transaction volumes"
-      ]
-    },
-    {
-      company: "5irechain Antier Affiliated",
-      position: "Product Manager", 
-      duration: "Oct 2022 - Aug 2023",
-      location: "Remote",
-      achievements: [
-        "Directed the development and launch of the layer 1 blockchain, achieving a record-breaking 50 million+ transactions",
-        "Managed project timelines, risks, and dependencies, ensuring seamless coordination between engineering and product teams",
-        "Led roadmap planning and sprint execution using Agile and Scrum methodologies",
-        "Coordinated cross-functional teams to ensure timely project releases and optimise ecosystem adoption"
-      ]
-    },
-    {
-      company: "Sanghvi Consultancy",
-      position: "Research Analyst",
-      duration: "Oct 2020 - Mar 2021", 
-      location: "Ahmedabad, India",
-      achievements: [
-        "Analyzed and optimized agent and client databases for automation",
-        "Implemented SMM (Social Media Marketing) and SEO strategies for the organization's social network",
-        "Formulated a targeted plan to acquire new clients, resulting in a 4% increase in the client base"
-      ]
-    }
-  ];
-
-  const projects = [
-    {
-      name: "BlockDAG",
-      description: "Layer 1 DAG-based blockchain that's compatible with EVM. It runs on the proof-of-work (PoW) algorithm that incentive users to mine BDAG coins to achieve security and decentralization.",
-      features: ["Whitepaper", "Mobile App Development", "ICO", "Mining Application Development", "Layer 1 Dev Documentation"],
-      link: "https://blockdag.network/"
-    },
-    {
-      name: "Tomi",
-      description: "Tomi is a DePin-focused web3 ecosystem that offers a comprehensive decentralised ecosystem with true ownership, strong privacy, and revolutionary DePIN technology.",
-      features: ["DePin", "Developer Documentation", "Project Planning", "Testnet Launch", "Roadmap Planning"],
-      link: "https://tomi.com/storage"
-    },
-    {
-      name: "5irechain",
-      description: "5ireChain is a layer-1 EVM compatible blockchain along with WASM compatibility. It is the world's first sustainable blockchain. Over 50M+ Transactions on testnet.",
-      features: ["Research", "Agile", "DSM", "User Guides", "Smart Contract", "Tokenomics", "Testnet", "Demos", "USDC Integration"],
-      link: "https://5ire.org/home"
-    },
-    {
-      name: "Shido",
-      description: "Shido is a Decentralized Layer 1 Blockchain focused on empowering the interoperability in crypto. Ecosystem Shidoscan, mobile application, DEX, staking platform. Achieved over 10,000 TPS.",
-      features: ["Research", "SDLC", "FRD", "BRD", "Proposal", "Tokenomics", "Testnet"],
-      link: "https://shido.io/"
-    },
-    {
-      name: "Hydro",
-      description: "Hydro enables publishers to monetise the \"time spent\" by users browsing on their platform, thereby reducing their dependence on ads. The Hydro ecosystem utilises the SUI blockchain for data recording and tracking.",
-      features: ["Research", "Scrum", "DSM", "Client Walkthroughs", "Sui Ecosystem"],
-      link: "https://www.hydro.online/"
-    }
-  ];
-
-  const portfolioItems = [
-    {
-      title: "Tomi DePin Ecosystem",
-      description: "Led the product strategy and development of decentralized wallet and storage solution, driving the successful launch of its 'tStorage' product. Conducted market research & competitive analysis to refine product positioning.",
-      techStack: ["ReactJs", "GoLang", "IPFS", "Swagger", "Postgres"],
-      link: "https://tomi.com/storage"
-    },
-    {
-      title: "5ireChain Ecosystem", 
-      description: "Led the development of the layer 1 blockchain development. Developed functional flow and process design for decentralised applications within the 5ire ecosystem. Analyzed ESG regulatory requirements to ensure compliance within the blockchain's consensus mechanism.",
-      techStack: ["NextJs", "NodeJs", "Redis", "Wallet Extension", "RabbitMQ", "Cross-Chain Bridge", "Nominator Application", "Postgres"],
-      link: "https://5ire.org/home"
-    },
-    {
-      title: "BlockDAG X1 Application",
-      description: "BlockDag X1 miner is a mobile application that allows users to mine BDAG coins and participate in presale. Led the product management of BlockDAG's wallet integration and mining app, facilitating decentralized mining via mobile platforms and contributing to a $20M+ presale for BDAG tokens.",
-      techStack: ["React Native", "NodeJs", "ROR", "ReactJs"],
-      link: "https://blockdag.network/"
-    },
-    {
-      title: "Vine Labs Ecosystem",
-      description: "An scalable modular \"Layer 0\" protocol that acts as an incubator for metaverses and open world space supported supported with multiple app chains to improve scalability. Facilitated requirements gathering sessions with cross-functional teams to ensure the platform's modularity and scalability met evolving market demands. Managed cross-chain bridge and staking DApp integrations",
-      techStack: ["ROR", "NodeJs", "ReactJs", "Postgres"],
-      link: "https://www.vinelayer0.com/"
-    },
-    {
-      title: "Digital Wallet Application - Tabuk",
-      description: "Digital Documentation is an application created exclusively for the Saudi government, concentrating on the Tabuk region. It's a Blockchain-based app for issuing and storing citizens' critical documents, utilizing IPFS for decentralized storage. Conducted user needs assessment for non-technical users, leading to a 30% increase in document accessibility. Assessed project risks and suggested mitigation strategies for data security in IPFS storage",
-      techStack: ["Kotlin", "NodeJs", "iOS",],
-      link: "https://apps.apple.com/in/app/digital-wallet-tabuk/id6466400505"
-    },
-    {
-      title: "Shido DeFi Ecosystem",
-      description: "Shido is a decentralized finance (DeFi) project offering innovative cross-chain solutions for seamless and secure cryptocurrency transactions. Collaborated with cross-functional teams to develop and refine product specifications for Shido's cross-chain solutions, enhancing interoperability and user experience. Conducted in-depth market research to identify emerging trends in the DeFi space, directly influencing Shido's strategic roadmap and product offerings.",
-      techStack: ["ReactJs", "NodeJs", "NextJs",],
-      link: "https://app.shido.io/"
-    }
-  ];
-
-  const skills = [
-    { category: "Leadership", items: ["Team Management", "Leadership", "Time Management", "Research", "Project Management",  ] },
-    { category: "Technical", items: ["Blockchain Protocols", "Smart Contracts", "JIRA, Scrum & Agile", "Quality Assurance"] },
-    { category: "Business", items: ["Problem-Solving", "Negotiation", "Collaboration", "Documentation"] },
-    { category: "Specialized", items: ["Tokenomics", "Content Writing", "MS Excel", "Designing"] }
   ];
 
   return (
@@ -361,7 +249,7 @@ const ResumePage = () => {
               <span className="sm:hidden">Back</span>
             </motion.button>
           </Link>
-          
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -393,7 +281,7 @@ const ResumePage = () => {
             </motion.div>
             <h1 className="text-xl md:text-2xl font-bold mb-2">SHIVAM PANDIYA</h1>
             <p className="text-primary font-semibold mb-4">Product Manager</p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 text-sm">
               <a href="tel:+91-8302312470" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
@@ -423,11 +311,10 @@ const ResumePage = () => {
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => scrollToSection(item.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-sm ${
-                  activeSection === item.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-card'
-                }`}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-sm ${activeSection === item.id
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-card'
+                  }`}
               >
                 {item.icon}
                 {item.label}
@@ -474,7 +361,7 @@ const ResumePage = () => {
                   </div>
                   <h1 className="text-lg font-bold mb-1">SHIVAM PANDIYA</h1>
                   <p className="text-primary font-semibold text-sm mb-4">Product Manager</p>
-                  
+
                   {/* Mobile Contact Info */}
                   <div className="space-y-2 text-xs">
                     <a href="tel:+91-8302312470" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
@@ -504,11 +391,10 @@ const ResumePage = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-sm ${
-                        activeSection === item.id
-                          ? 'bg-primary text-primary-foreground'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-card'
-                      }`}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-sm ${activeSection === item.id
+                        ? 'bg-primary text-primary-foreground'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-card'
+                        }`}
                     >
                       {item.icon}
                       {item.label}
@@ -524,7 +410,7 @@ const ResumePage = () => {
         {/* Main Content */}
         <main className="flex-1 lg:ml-80 relative z-10">
           <div className="container-custom px-4 md:px-6 py-8 md:py-12 lg:py-20">
-            
+
             {/* Summary Section */}
             <motion.section
               id="summary"
@@ -540,10 +426,7 @@ const ResumePage = () => {
                   Professional Summary
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-                  Experienced Product Manager with a diverse background in blockchain and Web3 product development. 
-                  Adept at bridging business needs with user-centric solutions, defining product roadmaps, and leading 
-                  cross-functional teams to develop and scale innovative blockchain products. Proven ability to drive 
-                  user adoption, optimize product-market fit, and deliver high-impact solutions in the Web3 domain.
+                  {summary}
                 </p>
               </div>
             </motion.section>
@@ -561,7 +444,7 @@ const ResumePage = () => {
                 <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 Experience
               </h2>
-              
+
               <div className="space-y-6 md:space-y-8">
                 {experiences.map((exp, index) => (
                   <motion.div
@@ -588,7 +471,7 @@ const ResumePage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-2 md:space-y-3">
                       {exp.achievements.map((achievement, i) => (
                         <motion.li
@@ -622,7 +505,7 @@ const ResumePage = () => {
                 <Code className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 Projects
               </h2>
-              
+
               <div className="grid lg:grid-cols-2 gap-4 md:gap-6">
                 {projects.map((project, index) => (
                   <motion.div
@@ -646,19 +529,17 @@ const ResumePage = () => {
                         </a>
                       )}
                     </div>
-                    
+
                     <p className="text-muted-foreground mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
                       {project.description}
                     </p>
-                    
-                    <div className="flex flex-wrap gap-1 md:gap-2">
+
+                    <div className="flex flex-col gap-2">
                       {project.features.map((feature, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 md:px-3 md:py-1 bg-primary/20 text-primary rounded-full text-xs md:text-sm"
-                        >
-                          {feature}
-                        </span>
+                        <div key={i} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          <span className="text-xs md:text-sm text-muted-foreground">{feature}</span>
+                        </div>
                       ))}
                     </div>
                   </motion.div>
@@ -680,7 +561,7 @@ const ResumePage = () => {
                 <Star className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 Skills
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 {skills.map((skillGroup, index) => (
                   <motion.div
@@ -710,43 +591,6 @@ const ResumePage = () => {
               </div>
             </motion.section>
 
-            {/* Education Section */}
-            <motion.section
-              id="education"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="mb-12 md:mb-16 lg:mb-20"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
-                <GraduationCap className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-                Education
-              </h2>
-              
-              <div className="space-y-4 md:space-y-6">
-                <div className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-semibold">BCom. Honors Entrepreneurship</h3>
-                  <p className="text-primary text-sm md:text-base">Global Centre For Entrepreneurship And Commerce</p>
-                  <p className="text-muted-foreground text-sm md:text-base">2017-2020</p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6">
-                    <h3 className="text-base md:text-lg font-semibold">12th (Senior Secondary)</h3>
-                    <p className="text-primary text-sm md:text-base">Subodh Public School</p>
-                    <p className="text-muted-foreground text-sm md:text-base">2015-2016</p>
-                  </div>
-                  
-                  <div className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6">
-                    <h3 className="text-base md:text-lg font-semibold">10th (Secondary)</h3>
-                    <p className="text-primary text-sm md:text-base">Subodh Public School</p>
-                    <p className="text-muted-foreground text-sm md:text-base">2014-2015</p>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
             {/* Certifications Section */}
             <motion.section
               id="certifications"
@@ -760,95 +604,64 @@ const ResumePage = () => {
                 <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 Certifications & Courses
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                {/* NISM: Equity Derivatives */}
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 0 * 0.1 }}
-                  className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift"
-                >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-orange-400 flex items-center justify-center flex-shrink-0">
-                      <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift"
+                  >
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-orange-400 flex items-center justify-center flex-shrink-0">
+                        <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg md:text-xl font-semibold text-white">{cert.name}</h3>
+                        <p className="text-cyan-400 text-sm md:text-base">{cert.issuer}</p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">NISM: Equity Derivatives</h3>
-                      <p className="text-cyan-400 text-sm md:text-base">National Institute of Securities Markets</p>
-                    </div>
-                  </div>
-                  <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs md:text-sm">
-                    Professional Certification
-                  </span>
-                </motion.div>
+                    <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs md:text-sm">
+                      {cert.tag}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
 
-                {/* Business Analysis - CCBA Endorsed */}
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 1 * 0.1 }}
-                  className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift"
-                >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-orange-400 flex items-center justify-center flex-shrink-0">
-                      <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">Business Analysis - CCBA Endorsed</h3>
-                      <p className="text-cyan-400 text-sm md:text-base">International Institute of Business Analysis</p>
-                    </div>
-                  </div>
-                  <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs md:text-sm">
-                    Professional Certification
-                  </span>
-                </motion.div>
+            {/* Education Section */}
+            <motion.section
+              id="education"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="mb-12 md:mb-16 lg:mb-20"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
+                <GraduationCap className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+                Education
+              </h2>
 
-                {/* Google Adwords */}
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 2 * 0.1 }}
-                  className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift"
-                >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-orange-400 flex items-center justify-center flex-shrink-0">
-                      <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">Google Adwords</h3>
-                      <p className="text-cyan-400 text-sm md:text-base">Google</p>
-                    </div>
-                  </div>
-                  <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs md:text-sm">
-                    Digital Marketing Certification
-                  </span>
-                </motion.div>
-
-                {/* NCC: Grade A */}
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 3 * 0.1 }}
-                  className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6 hover-lift"
-                >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-cyan-400 to-orange-400 flex items-center justify-center flex-shrink-0">
-                      <Award className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-white">NCC: Grade A</h3>
-                      <p className="text-cyan-400 text-sm md:text-base">National Cadet Corps</p>
-                    </div>
-                  </div>
-                  <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs md:text-sm">
-                    Leadership & Discipline
-                  </span>
-                </motion.div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                {education.map((edu, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="glass-effect rounded-xl md:rounded-2xl p-4 md:p-6"
+                  >
+                    <h3 className="text-base md:text-lg font-semibold">{edu.degree}</h3>
+                    <p className="text-primary text-sm md:text-base">{edu.institution}</p>
+                    <p className="text-muted-foreground text-sm md:text-base">{edu.year}</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">{edu.location}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.section>
 
@@ -865,7 +678,7 @@ const ResumePage = () => {
                 <FolderOpen className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 Portfolio Highlights
               </h2>
-              
+
               <div className="space-y-6 md:space-y-8">
                 {portfolioItems.map((item, index) => (
                   <motion.div
@@ -889,11 +702,11 @@ const ResumePage = () => {
                         </a>
                       )}
                     </div>
-                    
+
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm md:text-base">
                       {item.description}
                     </p>
-                    
+
                     {item.techStack && (
                       <div className="flex flex-wrap gap-1 md:gap-2">
                         {item.techStack.map((tech, i) => (
@@ -918,4 +731,3 @@ const ResumePage = () => {
 };
 
 export default ResumePage;
-
