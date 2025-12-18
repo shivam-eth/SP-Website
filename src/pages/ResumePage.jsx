@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 
 // Import resume PDF
-import resumePDF from '../assets/Shivam_Pandiya_PM.pdf';
+import resumePDF from '../assets/Shivam Pandiya PM.pdf';
 
 // Import data
 import {
