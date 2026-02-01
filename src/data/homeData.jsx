@@ -1,10 +1,10 @@
-import cyclingImage from '../assets/photo_2025-06-0718.12.07.jpeg';
+import cyclingImage from '../assets/S with cycle.jpg';
 import trekkingImage from '../assets/photo_2025-06-0718.12.04.jpeg';
-import runningImage from '../assets/photo_2025-06-0718.12.06.jpeg';
-import footballImage from '../assets/photo_2025-06-0718.12.03.jpeg';
-import gallery1 from '../assets/photo_2025-06-0718.12.01.jpeg';
-import gallery2 from '../assets/photo_2025-06-0718.11.59.jpeg';
-import gallery3 from '../assets/photo_2025-06-0718.11.58.jpeg';
+import runningImage from '../assets/photo_2025-06-0718.11.58.jpeg';
+import footballImage from '../assets/Screenshot 2026-02-01 at 10.57.27 PM.png';
+import gallery1 from '../assets/S with dog.jpg';
+import gallery2 from '../assets/S with cycle.jpg';
+import gallery3 from '../assets/photo_2025-06-0718.12.04.jpeg';
 import gallery4 from '../assets/photo_2025-06-0718.11.56.jpeg';
 import gallery5 from '../assets/photo_2025-06-0718.11.54.jpeg';
 import gallery6 from '../assets/photo_2025-06-0718.11.49.jpeg';
@@ -56,7 +56,7 @@ export const heroTexts = [
 export const galleryImages = [
     { src: gallery1, alt: 'Mountain Adventure', category: 'trekking' },
     { src: gallery2, alt: 'Cycling Journey', category: 'cycling' },
-    { src: gallery3, alt: 'Running Challenge', category: 'running' },
+    { src: gallery3, alt: 'Reading', category: 'reading' },
     { src: gallery4, alt: 'Team Sports', category: 'football' },
     { src: gallery5, alt: 'Outdoor Exploration', category: 'adventure' },
     { src: gallery6, alt: 'Peak Achievement', category: 'trekking' },
@@ -86,7 +86,7 @@ export const activities = [
         title: "Marathon Running",
         description: "Pushing limits through long-distance challenges, building endurance for life's greatest adventures.",
         image: runningImage,
-        stat: "3",
+        stat: "10",
         statLabel: "marathons completed",
         color: "from-orange-500 to-red-500"
     },
