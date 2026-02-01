@@ -12,9 +12,10 @@ import {
 // Import components
 import BlockchainBackground from '../components/BlockchainBackground';
 import HeroSection from '../components/home/HeroSection';
+import FeaturedWorkSection from '../components/home/FeaturedWorkSection';
 import AboutSection from '../components/home/AboutSection';
-import ActivitiesSection from '../components/home/ActivitiesSection';
 import GallerySection from '../components/home/GallerySection';
+import ActivitiesSection from '../components/home/ActivitiesSection';
 
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -78,13 +79,13 @@ const HomePage = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+              <a href="#featured-work" className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base">Work</a>
               <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base">About</a>
-              <a href="#activities" className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base">Activities</a>
-              <a href="#gallery" className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base">Gallery</a>
+              <a href="#gallery" className="text-muted-foreground hover:text-primary transition-colors text-sm lg:text-base">Life</a>
               <Link
                 to="/resume"
                 onClick={() => window.scrollTo(0, 0)}
-                className="bg-primary hover:bg-primary/80 text-primary-foreground px-3 py-2 lg:px-4 lg:py-2 rounded-full transition-all duration-300 hover-lift text-xs lg:text-sm"
+                className="bg-primary hover:bg-primary/80 text-primary-foreground px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium"
               >
                 Resume
               </Link>
@@ -112,6 +113,13 @@ const HomePage = () => {
               >
                 <div className="flex flex-col space-y-3 pt-4">
                   <a
+                    href="#featured-work"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-muted-foreground hover:text-primary transition-colors py-2 text-sm"
+                  >
+                    Work
+                  </a>
+                  <a
                     href="#about"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-muted-foreground hover:text-primary transition-colors py-2 text-sm"
@@ -119,18 +127,11 @@ const HomePage = () => {
                     About
                   </a>
                   <a
-                    href="#activities"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-muted-foreground hover:text-primary transition-colors py-2 text-sm"
-                  >
-                    Activities
-                  </a>
-                  <a
                     href="#gallery"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-muted-foreground hover:text-primary transition-colors py-2 text-sm"
                   >
-                    Gallery
+                    Life
                   </a>
                   <Link
                     to="/resume"
@@ -138,7 +139,7 @@ const HomePage = () => {
                       window.scrollTo(0, 0);
                       setMobileMenuOpen(false);
                     }}
-                    className="bg-primary hover:bg-primary/80 text-primary-foreground px-4 py-3 rounded-full transition-all duration-300 text-center text-sm mt-2"
+                    className="bg-primary hover:bg-primary/80 text-primary-foreground px-4 py-3 rounded-full transition-all duration-300 text-center text-sm font-medium mt-2"
                   >
                     Resume
                   </Link>
@@ -150,70 +151,85 @@ const HomePage = () => {
       </motion.header>
 
       <HeroSection y={y} />
+      <FeaturedWorkSection />
       <AboutSection />
-      <ActivitiesSection />
       <GallerySection />
+      <ActivitiesSection />
 
       {/* Call to Action */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95">
-          <BlockchainBackground />
-        </div>
+      <section className="py-24 md:py-32 px-4 md:px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
         <div className="container-custom text-center relative z-10">
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <span className="gradient-text">Ready to Collaborate?</span>
-            </motion.h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              <span className="gradient-text">Let's Build Together</span>
+            </h2>
 
-            <motion.p
-              className="text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 leading-relaxed"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Let's build the next big blockchain innovation together.
-            </motion.p>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+              Available for product leadership roles in Web3, DeFi, and DePIN ecosystems.
+            </p>
 
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <a href="mailto:shivampan98@gmail.com">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-primary/25"
+                >
+                  Get In Touch
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </a>
               <Link to="/resume" onClick={() => window.scrollTo(0, 0)}>
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 212, 255, 0.3)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-semibold glow-effect flex items-center gap-2 md:gap-3 mx-auto transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="border border-border hover:border-primary/50 text-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 hover:bg-card/50"
                 >
-                  <Briefcase className="w-4 h-4 md:w-5 md:h-5" />
-                  Check My Professional Resume
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                  <Briefcase className="w-4 h-4" />
+                  View Resume
                 </motion.button>
               </Link>
-            </motion.div>
+            </div>
+
+            <p className="text-muted-foreground">
+              <a href="mailto:shivampan98@gmail.com" className="text-primary hover:underline">shivampan98@gmail.com</a>
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="glass-effect border-t border-border py-6 md:py-8 text-center px-4 md:px-6">
+      <footer className="border-t border-border py-8 md:py-12 px-4 md:px-6">
         <div className="container-custom">
-          <p className="text-muted-foreground text-sm md:text-base">&copy; {new Date().getFullYear()} Shivam Pandiya. All rights reserved.</p>
-          <p className="text-xs md:text-sm text-muted-foreground mt-1 md:mt-2">Crafted with passion and precision</p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="font-semibold text-foreground mb-1">Shivam Pandiya</p>
+              <p className="text-sm text-muted-foreground">Senior Web3 Product Manager</p>
+            </div>
+            
+            <div className="flex items-center gap-6">
+              <a href="https://linkedin.com/in/shivam-sot" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                LinkedIn
+              </a>
+              <a href="https://x.com/ShivamPandiya3" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                Twitter
+              </a>
+              <a href="mailto:shivampan98@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                Email
+              </a>
+            </div>
+            
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
 
