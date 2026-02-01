@@ -1,4 +1,4 @@
-export const summary = "Product Manager with 5+ years of experience shipping Web3 and AI-powered products for Layer-1 ecosystems, DeFi protocols, and DePIN networks. I collaborate with engineering, design, and protocol teams to turn complex blockchain workflows into simple user and developer experiences. I have led multi-team roadmaps, developed high-throughput blockchain systems (100M+ transactions), and launched features for wallets, bridges, staking, and developer tools. Familiar with GenAI, including prompt design, LLM-assisted support flows, and AI for product discovery. Skilled at balancing technical depth with practical product decisions.";
+export const summary = "Product Manager with 5+ years of experience building and scaling complex software products across AI-driven platforms, SaaS, infrastructure, and regulated domains. Proven track record of owning products end-to-end from strategy and discovery to launch and iteration, while working closely with engineering, design, data, and compliance teams. Strong at translating complex systems into simple, reliable user experiences, with hands-on experience applying AI and LLMs to product discovery, automation, and decision support. Skilled at balancing technical knowledge with practical product judgments.";
 
 export const experiences = [
   {
@@ -7,13 +7,13 @@ export const experiences = [
     duration: "Jun '21 - Present",
     location: "Chandigarh, IN",
     achievements: [
-      "Own end-to-end product delivery for Web3 platforms, decentralized finance applications and crypto exchanges. Designed roadmaps and planned backlogs across multiple devlopment areas (protocol, backend, wallet, DevOps).",
-      "Led multi-team execution across protocol, backend, DevOps, and wallet teams (120+ total), ensuring aligned roadmaps and coordinated releases across multiple decentralized applications.",
-      "Worked on tokenomics models and TGE planning with partner ecosystems, shaping incentive design and user acquisition strategy for public launches.",
-      "Collaborated closely with UX and research teams to create simplified flows for trading, liquidity, and collateral operations.",
-      "Collaborated with security teams to integrate audit partners (CertiK, Hacken) into milestones, ensuring releases met protocol, compliance, and safety expectations.",
-      "Collaborated with protocol engineering teams working across Cosmos SDK, Substrate, Hyperledger, and Corda architectures to define product expectations and user-facing behaviors.",
-      "Implemented Feature Flagging and CI/CD pipelines to increase deployment frequency from bi-weekly to daily."
+      "Owned end-to-end product delivery for multiple enterprise-grade platforms, from discovery through launch and iteration.",
+      "Defined product roadmaps, OKRs, and prioritized backlogs across backend services, APIs, mobile/web apps, and infrastructure teams.",
+      "Led cross-functional execution across engineering, DevOps, QA, UX, and security teams (120+ contributors).",
+      "Delivered high-throughput systems supporting 100M+ monthly transactions, focusing on reliability, scalability, and performance.",
+      "Partnered with compliance and security teams to integrate audit workflows, risk controls, and release governance.",
+      "Introduced feature flagging, CI/CD workflows, and release controls, improving deployment frequency from bi-weekly to daily.",
+      "Applied AI-assisted product discovery using LLMs for requirement synthesis, support automation, and internal knowledge workflows."
     ]
   },
   {
@@ -22,10 +22,11 @@ export const experiences = [
     duration: "Oct '22 - Mar '25",
     location: "Remote",
     achievements: [
-      "Managed backlog and delivery for ecosystem products: staking, governance, bridge, wallets, and developer tools. Breaking down multi-month epics into clear, testable user stories.",
-      "Led the development & launch of the layer 1 blockchain, achieving over 100+ million transactions in the first month, built on a Rust-based chain architecture.",
-      "Contributed to cross-chain architecture discussions and designed UX flows for bridging/staking that simplified complex protocol operations for retail users.",
-      "Represented product during ecosystem demo calls, investor sessions, and developer onboarding walkthroughs.",
+      "Managed product backlog ownership for platform capabilities including wallets, integrations, governance, and APIs.",
+      "Broke down large, multi-quarter initiatives into clear epics, user stories, and acceptance criteria.",
+      "Led platform launch execution, supporting large-scale adoption and operational readiness.",
+      "Designed simplified user workflows for complex system interactions, improving usability and onboarding.",
+      "Represented product in stakeholder reviews, demos, and external partner discussions.",
       "Improved sprint velocity (~20%) by providing clear acceptance criteria, refining stories, and aligning on definition of done."
     ]
   },
@@ -36,35 +37,34 @@ export const experiences = [
     location: "Ahmedabad, IN",
     achievements: [
       "Automated client database processes, improving operational efficiency using Excel-based workflows.",
-      "Elevated website traffic, social media engagement, & conversion rates through the strategic implementation of SMM & SEO strategies using Google Analytics",
-      "Formulated a targeted plan to acquire new clients, resulting in a 4% increase in the client base"
+      "Elevated website traffic, social media engagement, & conversion rates through the strategic implementation of SMM & SEO strategies using Google Analytics.",
+      "Formulated a targeted plan to acquire new clients, resulting in a 4% increase in the client base."
     ]
   }
 ];
 
 export const projects = [
   {
-    name: "Qubetics",
-    description: "Layer-1 Blockchain (Chain Abstraction + DePIN)",
-    features: [
-      "Defined product flows for chain abstraction, validator roles, staking logic, and early dVPN features.",
-      "Worked with blockchain devs to translate technical constraints into intuitive UI behaviors and safe-guard checks.",
-      "Contributed to tokenomics modeling, validator incentives, and decentralized governance."
-    ],
-    link: "https://www.qubetics.com/" 
-  },
-  {
     name: "Vuelo",
-    description: "GenAIPowered Healthcare Assistant (AI + HealthTech)",
+    description: "GenAI Powered Healthcare Assistant (AI + HealthTech)",
     features: [
-      "Gathered & refined requirements with external & internal stakeholders; prepared FRDs, flows, and sprint plans.",
-      "Evaluated multiple AI model options and fine-tuned LLMs with curated medical context to reduce hallucinations and improve reliability.",
-      "Designed conversational UX, safe-response patterns, and fallback logic to handle sensitive health topics responsibly."
+      "Gathered & refined requirements with external & internal stakeholders: prepared FRDs, flows, and sprint plans.",
+      "Evaluated and integrated LLMs, focusing on hallucination reduction, guardrails, and safe-response design.",
+      "Designed AI conversation flows, fallback logic, and escalation paths for sensitive health scenarios."
     ],
     link: "#"
   },
   {
-    name: "Tomi DePin Ecosystem",
+    name: "Qubetics",
+    description: "Layer-1 Blockchain (Chain Abstraction + DePIN)",
+    features: [
+      "Defined product flows for chain abstraction, validator roles, staking logic, and early dVPN features.",
+      "Worked with blockchain devs to translate technical constraints into intuitive UI behaviors."
+    ],
+    link: "https://www.qubetics.com/" 
+  },
+  {
+    name: "Tomi DePIN Ecosystem",
     description: "Decentralized Hosting & Storage (DePIN)",
     features: [
       "Designed dashboard UX for usage tracking, billing, developer APIs, and lifecycle management.",
@@ -84,7 +84,7 @@ export const projects = [
     name: "Vine Labs",
     description: "Layer 0 interoperable ecosystem | Metaverse",
     features: [
-      "Built modular cross-chain functionality for metaverse applications, enabling platform scalability"
+      "Built modular cross-chain functionality for metaverse applications, enabling platform scalability."
     ],
     link: "https://www.vinelayer0.com/"
   }
@@ -92,20 +92,20 @@ export const projects = [
 
 export const portfolioItems = [
   {
-    title: "Qubetics",
-    description: "Layer-1 Blockchain (Chain Abstraction + DePIN). Defined product flows for chain abstraction, validator roles, staking logic, and early dVPN features. Worked with blockchain devs to translate technical constraints into intuitive UI behaviors.",
-    techStack: ["Chain Abstraction", "DePIN", "Layer-1"],
-    link: "https://www.qubetics.com/"
-  },
-  {
     title: "Vuelo",
-    description: "GenAIPowered Healthcare Assistant (AI + HealthTech). Gathered & refined requirements with external & internal stakeholders. Evaluated multiple AI model options and fine-tuned LLMs with curated medical context.",
+    description: "GenAI Powered Healthcare Assistant (AI + HealthTech). Gathered & refined requirements with stakeholders. Evaluated and integrated LLMs with focus on hallucination reduction and safe-response design.",
     techStack: ["AI", "HealthTech", "GenAI", "LLM"],
     link: "#"
   },
   {
-    title: "Tomi DePin Ecosystem",
-    description: "Decentralized Hosting & Storage (DePIN). Designed dashboard UX for usage tracking, billing, developer APIs, and lifecycle management. Conducted competitive analysis and positioning strategy.",
+    title: "Qubetics",
+    description: "Layer-1 Blockchain (Chain Abstraction + DePIN). Defined product flows for chain abstraction, validator roles, staking logic, and early dVPN features.",
+    techStack: ["Chain Abstraction", "DePIN", "Layer-1"],
+    link: "https://www.qubetics.com/"
+  },
+  {
+    title: "Tomi DePIN Ecosystem",
+    description: "Decentralized Hosting & Storage (DePIN). Designed dashboard UX for usage tracking, billing, developer APIs, and lifecycle management.",
     techStack: ["DePIN", "Hosting", "Storage"],
     link: "https://tomi.com/storage"
   },
@@ -126,11 +126,15 @@ export const portfolioItems = [
 export const skills = [
   { 
     category: "Key Skills", 
-    items: ["Product Strategy", "Roadmap Development", "Multi-Tasking", "Team Collaboration", "Feature Prioritisation", "Scrum", "Design Oriented", "Market Research", "Problem Solving", "Client Consultation", "Prototyping", "Product Delivery"] 
+    items: ["Product Strategy", "Roadmap Development", "LLM Evaluation", "Feature Prioritisation", "Scrum/Agile", "Prompt Design", "Design Oriented", "Market Research", "Problem Solving", "Client Consultation", "Prototyping", "Product Delivery"] 
   },
   { 
     category: "Technical Skills", 
-    items: ["MS Excel", "Google Analytics", "Jira", "Confluence", "Figma", "Miro", "Postman", "EVM", "Substrate", "Cosmos", "Hyperledger", "Chain abstraction", "DePIN", "DeFi"] 
+    items: ["MS Excel", "Google Analytics", "Jira", "Confluence", "Figma", "Miro", "Postman"] 
+  },
+  { 
+    category: "Web3", 
+    items: ["L1, L2, L0", "Chain Abstraction", "DePIN", "RWA", "ZK & Rollups", "Tokenomics Modelling", "DeFi"] 
   }
 ];
 

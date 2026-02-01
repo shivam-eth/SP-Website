@@ -39,7 +39,7 @@ const HeroSection = ({ y }) => {
                     >
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                            Available for new opportunities
+                            Considering strategic opportunities
                         </span>
                     </motion.div>
 
@@ -51,9 +51,9 @@ const HeroSection = ({ y }) => {
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-balance"
                     >
                         <span className="text-foreground">I ship </span>
-                        <span className="gradient-text">blockchain products</span>
+                        <span className="gradient-text">digital products</span>
                         <br className="hidden sm:block" />
-                        <span className="text-foreground"> at scale</span>
+                        <span className="text-foreground"> that matter</span>
                     </motion.h1>
 
                     {/* Rotating subtitle */}
@@ -84,9 +84,9 @@ const HeroSection = ({ y }) => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8"
                     >
-                        From Layer-1 launches to DeFi protocols and DePIN networks. 
-                        I collaborate with engineering, design, and protocol teams to turn complex 
-                        blockchain workflows into simple user experiences.
+                        From enterprise platforms to consumer apps and data-driven products. 
+                        I collaborate with engineering, design, and cross-functional teams to turn complex 
+                        technical challenges into intuitive user experiences.
                     </motion.p>
 
                     {/* Tech Stack Pills */}
