@@ -17,15 +17,20 @@ const GallerySection = () => {
     return (
         <section id="gallery" className="py-12 md:py-16 lg:py-20 px-4 md:px-6">
             <div className="container-custom">
-                <motion.h2
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12 lg:mb-16"
+                    className="text-center mb-12 md:mb-16"
                 >
-                    <span className="gradient-text">Adventure Gallery</span>
-                </motion.h2>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        <span className="gradient-text">Beyond the Keyboard</span>
+                    </h2>
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                        When I'm not shipping products, you'll find me exploring mountain trails, cycling scenic routes, or chasing marathon finish lines.
+                    </p>
+                </motion.div>
 
                 {/* Desktop Grid View */}
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

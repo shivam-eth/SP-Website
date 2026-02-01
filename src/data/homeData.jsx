@@ -14,15 +14,43 @@ import {
     Bike,
     Trophy,
     Target,
-    Code
+    Code,
+    Layers,
+    Users,
+    Zap,
+    Shield,
+    Rocket,
+    GitBranch,
+    Database
 } from 'lucide-react';
 import React from 'react';
 
+// Hero metrics for social proof
+export const heroMetrics = [
+    { value: "5+", label: "Years Experience", icon: <Zap className="w-5 h-5" /> },
+    { value: "100M+", label: "Transactions Processed", icon: <Database className="w-5 h-5" /> },
+    { value: "120+", label: "Engineers Led", icon: <Users className="w-5 h-5" /> },
+    { value: "8+", label: "Products Shipped", icon: <Rocket className="w-5 h-5" /> }
+];
+
+// Companies/projects for social proof strip
+export const companies = [
+    { name: "5irechain", url: "https://5ire.org" },
+    { name: "Qubetics", url: "https://qubetics.com" },
+    { name: "BlockDAG", url: "https://blockdag.network" },
+    { name: "Tomi", url: "https://tomi.com" },
+    { name: "Antier Solutions", url: "https://antiersolutions.com" }
+];
+
+// Tech stack for hero
+export const techStack = [
+    "Cosmos SDK", "Substrate", "EVM", "DeFi", "DePIN", "Tokenomics"
+];
+
 export const heroTexts = [
-    "Product Manager",
-    "Blockchain Pioneer",
-    "Adventure Seeker",
-    "Web3 Innovation Leader"
+    "Senior Web3 Product Manager",
+    "Layer-1 Blockchain Specialist",
+    "DeFi & DePIN Expert"
 ];
 
 export const galleryImages = [
@@ -75,18 +103,18 @@ export const activities = [
 
 export const aboutItems = [
     {
-        icon: <Code className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />,
-        title: "Professional",
-        description: "Leading product development in blockchain and Web3 ecosystems, driving innovation and user adoption through strategic thinking and technical expertise."
+        icon: <Layers className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />,
+        title: "Product Strategy",
+        description: "I translate complex blockchain architectures into user-friendly experiences. From tokenomics to UX flows, I bridge the gap between protocol teams and end users."
     },
     {
-        icon: <Mountain className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-secondary" />,
-        title: "Adventurer",
-        description: "Exploring the great outdoors through trekking, cycling, and running. Nature fuels my creativity and problem-solving abilities."
+        icon: <Users className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-secondary" />,
+        title: "Cross-functional Leadership",
+        description: "Led 120+ engineers across protocol, backend, DevOps, and wallet teams. I ensure aligned roadmaps and coordinated releases across decentralized applications."
     },
     {
-        icon: <Target className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-accent" />,
-        title: "Explorer",
-        description: "Always seeking new challenges and experiences, both in technology and in the wilderness. Innovation thrives at the intersection of passion and purpose."
+        icon: <Shield className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-accent" />,
+        title: "Web3 Native",
+        description: "Deep expertise in Cosmos SDK, Substrate, EVM, and Hyperledger. I've shipped DeFi, DePIN, and Layer-1 products with security partners like CertiK and Hacken."
     }
 ];

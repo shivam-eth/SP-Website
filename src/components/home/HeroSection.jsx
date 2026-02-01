@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Zap, Briefcase, ArrowRight, Heart } from 'lucide-react';
-import heroImage from '../../assets/photo_2025-06-0718.12.09.jpeg';
-import { heroTexts } from '../../data/homeData';
+import { ArrowRight, Download, ChevronDown, Mail } from 'lucide-react';
+import { heroTexts, heroMetrics, companies, techStack } from '../../data/homeData';
 
 const HeroSection = ({ y }) => {
     const [currentText, setCurrentText] = useState(0);
@@ -16,121 +15,197 @@ const HeroSection = ({ y }) => {
         return () => clearInterval(textInterval);
     }, []);
 
+    const scrollToWork = () => {
+        document.getElementById('featured-work')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20 lg:pt-0">
-            <motion.div style={{ y }} className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background/70" />
-            </motion.div>
+        <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 md:pt-24">
+            {/* Gradient orbs background */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+            </div>
 
-            <div className="container-custom px-4 md:px-6 py-8 md:py-12 lg:py-20 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-                    {/* Left Content */}
+            <div className="container-custom px-4 md:px-6 py-8 md:py-12 relative z-10 flex-1 flex flex-col justify-center">
+                {/* Main Hero Content */}
+                <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+                    {/* Eyebrow */}
                     <motion.div
-                        initial={{ x: -100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="space-y-4 md:space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-6"
                     >
-                        <div className="space-y-3 md:space-y-4">
-                            <motion.h2
-                                initial={{ y: 50, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.7 }}
-                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-                            >
-                                <span className="text-foreground">Digital</span>
-                                <br />
-                                <span className="gradient-text">Adventure</span>
-                                <br />
-                                <span className="text-foreground">Pioneer</span>
-                            </motion.h2>
-
-                            <motion.div
-                                initial={{ y: 30, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.9 }}
-                                className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary font-semibold h-6 md:h-8 flex justify-center lg:justify-start"
-                            >
-                                <AnimatePresence mode="wait">
-                                    <motion.span
-                                        key={currentText}
-                                        initial={{ y: 20, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -20, opacity: 0 }}
-                                        transition={{ duration: 0.5 }}
-                                        className="flex items-center gap-2"
-                                    >
-                                        <Zap className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
-                                        {heroTexts[currentText]}
-                                    </motion.span>
-                                </AnimatePresence>
-                            </motion.div>
-                        </div>
-
-                        <motion.p
-                            initial={{ y: 30, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 1.1 }}
-                            className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0"
-                        >
-                            Passionate about building innovative blockchain products while exploring the great outdoors.
-                            I bring the same energy from mountain peaks to product roadmaps, creating solutions that push boundaries.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ y: 30, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 1.3 }}
-                            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start"
-                        >
-                            <Link to="/resume" onClick={() => window.scrollTo(0, 0)}>
-                                <motion.button
-                                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 212, 255, 0.3)" }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-5 py-3 md:px-6 md:py-3 rounded-full text-sm md:text-base font-semibold flex items-center gap-2 glow-effect w-full sm:w-auto justify-center"
-                                >
-                                    <Briefcase className="w-4 h-4" />
-                                    My Resume
-                                    <ArrowRight className="w-4 h-4" />
-                                </motion.button>
-                            </Link>
-
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="border-2 border-primary text-primary px-5 py-3 md:px-6 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
-                                onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
-                            >
-                                <Heart className="w-4 h-4" />
-                                Discover My Journey
-                            </motion.button>
-                        </motion.div>
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+                            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                            Available for new opportunities
+                        </span>
                     </motion.div>
 
-                    {/* Right Image */}
-                    <motion.div
-                        initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.6 }}
-                        className="relative order-1 lg:order-2"
+                    {/* Main Headline */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-balance"
                     >
-                        <div className="relative">
-                            <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 blur-xl"
-                            />
-                            <motion.img
-                                whileHover={{ scale: 1.05 }}
-                                src={heroImage}
-                                alt="Shivam Pandiya"
-                                className="relative w-full max-w-sm md:max-w-lg mx-auto rounded-2xl md:rounded-3xl shadow-2xl floating-animation"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-2xl md:rounded-3xl" />
-                        </div>
+                        <span className="text-foreground">I ship </span>
+                        <span className="gradient-text">blockchain products</span>
+                        <br className="hidden sm:block" />
+                        <span className="text-foreground"> at scale</span>
+                    </motion.h1>
+
+                    {/* Rotating subtitle */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="h-8 md:h-10 mb-6 flex items-center justify-center"
+                    >
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={currentText}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3 }}
+                                className="text-lg md:text-xl lg:text-2xl text-primary font-semibold"
+                            >
+                                {heroTexts[currentText]}
+                            </motion.span>
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Description */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8"
+                    >
+                        From Layer-1 launches to DeFi protocols and DePIN networks. 
+                        I collaborate with engineering, design, and protocol teams to turn complex 
+                        blockchain workflows into simple user experiences.
+                    </motion.p>
+
+                    {/* Tech Stack Pills */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="flex flex-wrap justify-center gap-2 mb-10"
+                    >
+                        {techStack.map((tech, index) => (
+                            <span
+                                key={tech}
+                                className="px-3 py-1.5 text-xs md:text-sm font-medium bg-card/50 border border-border rounded-full text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors cursor-default"
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </motion.div>
+
+                    {/* CTA Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    >
+                        <motion.button
+                            onClick={scrollToWork}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-primary/25"
+                        >
+                            View My Work
+                            <ArrowRight className="w-4 h-4" />
+                        </motion.button>
+
+                        <Link to="/resume" onClick={() => window.scrollTo(0, 0)}>
+                            <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="border border-border hover:border-primary/50 text-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 hover:bg-card/50"
+                            >
+                                <Download className="w-4 h-4" />
+                                Resume
+                            </motion.button>
+                        </Link>
                     </motion.div>
                 </div>
+
+                {/* Metrics Grid */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16"
+                >
+                    {heroMetrics.map((metric, index) => (
+                        <motion.div
+                            key={metric.label}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                            className="metric-card text-center group"
+                        >
+                            <div className="text-primary mb-2 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
+                                {metric.icon}
+                            </div>
+                            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-1">
+                                {metric.value}
+                            </div>
+                            <div className="text-xs md:text-sm text-muted-foreground">
+                                {metric.label}
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+                {/* Companies Strip */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="text-center pb-16"
+                >
+                    <p className="text-xs md:text-sm text-muted-foreground mb-6 uppercase tracking-wider">
+                        Products shipped with
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                        {companies.map((company) => (
+                            <a
+                                key={company.name}
+                                href={company.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base font-medium"
+                            >
+                                {company.name}
+                            </a>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
+
+            {/* Scroll indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+                className="absolute bottom-4 left-1/2 -translate-x-1/2"
+            >
+                <motion.button
+                    onClick={scrollToWork}
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                    <ChevronDown className="w-6 h-6" />
+                </motion.button>
+            </motion.div>
         </section>
     );
 };
