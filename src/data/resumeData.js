@@ -81,6 +81,15 @@ export const projects = [
     link: "https://blockdag.network/"
   },
   {
+    name: "Shido",
+    description: "Shido DeFi Ecosystem",
+    features: [
+      "Owned product discovery, requirements, and roadmap definition for cross-chain DeFi solutions, collaborating with engineering and design teams to enhance interoperability, security, and user experience.",
+      "Conducted DeFi market and competitive analysis, translating emerging cross-chain trends and user insights into prioritized features and strategic product decisions."
+    ],
+    link: "https://shido.io"
+  },
+  {
     name: "Vine Labs",
     description: "Layer 0 interoperable ecosystem | Metaverse",
     features: [
@@ -114,6 +123,12 @@ export const portfolioItems = [
     description: "DAG based blockchain | Mining Mobile Application. Reworked onboarding and mining UX flows, contributing to a ~35% increase in app downloads after v2 release.",
     techStack: ["DAG", "Blockchain", "Mobile App"],
     link: "https://blockdag.network/"
+  },
+  {
+    title: "Shido",
+    description: "Shido DeFi Ecosystem. Owned product discovery, requirements, and roadmap definition for cross-chain DeFi solutions. Conducted DeFi market and competitive analysis to translate trends into strategic decisions.",
+    techStack: ["DeFi", "Cross-chain", "Interoperability"],
+    link: "https://shido.io"
   },
   {
     title: "Vine Labs",

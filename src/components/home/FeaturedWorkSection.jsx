@@ -14,11 +14,11 @@ const featuredProjects = [
         featured: true
     },
     {
-        name: "5irechain",
-        type: "Sustainable Layer-1",
-        description: "Led development & launch achieving 100M+ transactions in the first month. Managed ecosystem products: staking, governance, bridge, wallets, and developer tools.",
-        tags: ["Substrate", "Rust", "100M+ Txns"],
-        link: "https://5ire.org",
+        name: "Shido",
+        type: "Cross-chain DeFi Ecosystem",
+        description: "Owned product discovery, requirements, and roadmap definition for cross-chain DeFi solutions. Collaborated with engineering and design teams to enhance interoperability, security, and user experience.",
+        tags: ["DeFi", "Cross-chain", "Interoperability"],
+        link: "https://shido.io",
         featured: true
     },
     {
@@ -49,10 +49,10 @@ const featuredExperience = [
         location: "Chandigarh, IN"
     },
     {
-        company: "5irechain",
+        company: "Shido",
         role: "Product Owner",
         period: "Oct 2022 - Mar 2025",
-        highlight: "Launched Layer-1 blockchain with 100M+ transactions in month one. Managed staking, governance, bridge, wallets, and developer tools.",
+        highlight: "Owned product discovery and roadmap definition for cross-chain DeFi solutions. Conducted DeFi market analysis to translate emerging trends into prioritized features and strategic decisions.",
         location: "Remote"
     }
 ];

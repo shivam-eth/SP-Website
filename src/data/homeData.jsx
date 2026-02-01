@@ -35,7 +35,7 @@ export const heroMetrics = [
 
 // Companies/projects for social proof strip
 export const companies = [
-    { name: "5irechain", url: "https://5ire.org" },
+    { name: "Shido", url: "https://shido.io" },
     { name: "Qubetics", url: "https://qubetics.com" },
     { name: "BlockDAG", url: "https://blockdag.network" },
     { name: "Tomi", url: "https://tomi.com" },
