@@ -21,7 +21,6 @@ const BlockchainBackground = () => {
 
     // Blockchain nodes
     const nodes = [];
-    const connections = [];
 
     // Create nodes
     for (let i = 0; i < 12; i++) {

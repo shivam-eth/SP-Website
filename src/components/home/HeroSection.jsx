@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Download, ChevronDown, Mail } from 'lucide-react';
 import { heroTexts, heroMetrics, companies, techStack } from '../../data/homeData';
 
-const HeroSection = ({ y }) => {
+const HeroSection = () => {
     const [currentText, setCurrentText] = useState(0);
 
     useEffect(() => {
@@ -96,7 +96,7 @@ const HeroSection = ({ y }) => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="flex flex-wrap justify-center gap-2 mb-10"
                     >
-                        {techStack.map((tech, index) => (
+                        {techStack.map((tech) => (
                             <span
                                 key={tech}
                                 className="px-3 py-1.5 text-xs md:text-sm font-medium bg-card/50 border border-border rounded-full text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors cursor-default"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -77,7 +77,6 @@ const ResumePage = () => {
 
     // Blockchain network visualization
     const nodes = [];
-    const connections = [];
     const nodeCount = window.innerWidth < 768 ? 15 : 25; // Reduced for performance
 
     class Node {
@@ -361,7 +360,7 @@ const ResumePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6"
               >
-                {quickStats.map((stat, index) => (
+                {quickStats.map((stat) => (
                   <div
                     key={stat.label}
                     className="flex items-center gap-3 p-3 md:p-4 rounded-xl bg-card/30 border border-border"
