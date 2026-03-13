@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 // Import resume PDF
-import resumePDF from '../assets/Shivam Pandiya PM.pdf';
+import resumePDF from '../assets/Shivam_Pandiya_Resume.pdf';
 
 // Import data
 import {
