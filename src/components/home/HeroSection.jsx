@@ -1,213 +1,195 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, ChevronDown, Mail } from 'lucide-react';
-import { heroTexts, heroMetrics, companies, techStack } from '../../data/homeData';
+
+const HEADLINE_LINES = [
+  [
+    { word: 'A', accent: false },
+    { word: 'product', accent: false },
+    { word: 'manager', accent: false },
+  ],
+  [
+    { word: 'who', accent: false },
+    { word: 'reads', accent: false },
+    { word: 'the', accent: false },
+  ],
+  [
+    { word: 'protocol', accent: true },
+    { word: 'spec', accent: true },
+    { word: 'first.', accent: false },
+  ],
+];
 
 const HeroSection = () => {
-    const [currentText, setCurrentText] = useState(0);
+  const rootRef = useRef(null);
 
-    useEffect(() => {
-        const textInterval = setInterval(() => {
-            setCurrentText((prev) => (prev + 1) % heroTexts.length);
-        }, 3000);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        return () => clearInterval(textInterval);
-    }, []);
+    const ctx = gsap.context(() => {
+      const splits = gsap.utils.toArray('.hero-char');
+      if (reduce) {
+        gsap.set(splits, { y: 0, opacity: 1 });
+        gsap.set('.hero-reveal', { y: 0, opacity: 1 });
+        return;
+      }
+      gsap.set(splits, { yPercent: 110, opacity: 0 });
+      gsap.set('.hero-reveal', { y: 16, opacity: 0 });
 
-    const scrollToWork = () => {
-        document.getElementById('featured-work')?.scrollIntoView({ behavior: 'smooth' });
-    };
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.to(splits, {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1.1,
+        stagger: 0.018,
+        delay: 0.15,
+      })
+        .to(
+          '.hero-reveal',
+          { y: 0, opacity: 1, duration: 0.9, stagger: 0.08 },
+          '-=0.7'
+        );
+    }, rootRef);
 
-    return (
-        <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 md:pt-24">
-            {/* Gradient orbs background */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-                <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-            </div>
+    return () => ctx.revert();
+  }, []);
 
-            <div className="container-custom px-4 md:px-6 py-8 md:py-12 relative z-10 flex-1 flex flex-col justify-center">
-                {/* Main Hero Content */}
-                <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-                    {/* Eyebrow */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="mb-6"
-                    >
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-                            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                            Available for new opportunities
+  return (
+    <section
+      ref={rootRef}
+      className="relative min-h-screen flex flex-col"
+    >
+      {/* Top meta row */}
+      <div className="container-edge pt-32 md:pt-36 grid grid-cols-12 gap-6 items-start">
+        <div className="col-span-6 md:col-span-3 hero-reveal">
+          <p className="eyebrow">Shivam Pandiya</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Product manager. Protocol-layer focus.
+          </p>
+        </div>
+        <div className="hidden md:block md:col-span-6" />
+        <div className="col-span-6 md:col-span-3 flex md:justify-end hero-reveal">
+          <div className="inline-flex items-center gap-2 text-sm">
+            <span className="pulse-dot" />
+            <span className="text-muted-foreground">Open to new roles · 2026</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Headline + subtext */}
+      <div className="container-edge flex-1 flex items-center mt-12 md:mt-0">
+        <div className="grid grid-cols-12 gap-6 w-full">
+          <h1
+            className="col-span-12 md:col-span-11 text-foreground font-medium"
+            style={{
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.02,
+              fontSize: 'clamp(2.25rem, 6.2vw, 5.5rem)',
+            }}
+          >
+            {HEADLINE_LINES.map((line, li) => (
+              <span key={li} className="block">
+                {line.map((w, wi) => (
+                  <span key={`${li}-${wi}`} className="inline-block">
+                    {w.word.split('').map((ch, ci) => (
+                      <span
+                        key={`${li}-${wi}-${ci}`}
+                        className="inline-block overflow-hidden align-baseline"
+                        style={{ lineHeight: 1.02 }}
+                      >
+                        <span
+                          className={`hero-char inline-block will-change-transform ${
+                            w.accent ? 'font-serif italic text-accent' : ''
+                          }`}
+                        >
+                          {ch}
                         </span>
-                    </motion.div>
-
-                    {/* Main Headline */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-balance"
-                    >
-                        <span className="text-foreground">I ship </span>
-                        <span className="gradient-text">blockchain products</span>
-                        <br className="hidden sm:block" />
-                        <span className="text-foreground"> at scale</span>
-                    </motion.h1>
-
-                    {/* Rotating subtitle */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="h-8 md:h-10 mb-6 flex items-center justify-center"
-                    >
-                        <AnimatePresence mode="wait">
-                            <motion.span
-                                key={currentText}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.3 }}
-                                className="text-lg md:text-xl lg:text-2xl text-primary font-semibold"
-                            >
-                                {heroTexts[currentText]}
-                            </motion.span>
-                        </AnimatePresence>
-                    </motion.div>
-
-                    {/* Description */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8"
-                    >
-                        From Layer-1 launches to DeFi protocols and DePIN networks. 
-                        I collaborate with engineering, design, and protocol teams to turn complex 
-                        blockchain workflows into simple user experiences.
-                    </motion.p>
-
-                    {/* Tech Stack Pills */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-wrap justify-center gap-2 mb-10"
-                    >
-                        {techStack.map((tech) => (
-                            <span
-                                key={tech}
-                                className="px-3 py-1.5 text-xs md:text-sm font-medium bg-card/50 border border-border rounded-full text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors cursor-default"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </motion.div>
-
-                    {/* CTA Buttons */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                    >
-                        <motion.button
-                            onClick={scrollToWork}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg shadow-primary/25"
-                        >
-                            View My Work
-                            <ArrowRight className="w-4 h-4" />
-                        </motion.button>
-
-                        <Link to="/resume" onClick={() => window.scrollTo(0, 0)}>
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="border border-border hover:border-primary/50 text-foreground px-8 py-4 rounded-full text-base font-semibold flex items-center gap-2 transition-all duration-300 hover:bg-card/50"
-                            >
-                                <Download className="w-4 h-4" />
-                                Resume
-                            </motion.button>
-                        </Link>
-                    </motion.div>
-                </div>
-
-                {/* Metrics Grid */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16"
-                >
-                    {heroMetrics.map((metric, index) => (
-                        <motion.div
-                            key={metric.label}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                            className="metric-card text-center group"
-                        >
-                            <div className="text-primary mb-2 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-                                {metric.icon}
-                            </div>
-                            <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-1">
-                                {metric.value}
-                            </div>
-                            <div className="text-xs md:text-sm text-muted-foreground">
-                                {metric.label}
-                            </div>
-                        </motion.div>
+                      </span>
                     ))}
-                </motion.div>
+                    {wi < line.length - 1 && (
+                      <span
+                        className="inline-block overflow-hidden align-baseline"
+                        style={{ lineHeight: 1.02 }}
+                      >
+                        <span className="hero-char inline-block">{' '}</span>
+                      </span>
+                    )}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </h1>
 
-                {/* Companies Strip */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="text-center pb-16"
-                >
-                    <p className="text-xs md:text-sm text-muted-foreground mb-6 uppercase tracking-wider">
-                        Products shipped with
-                    </p>
-                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-                        {companies.map((company) => (
-                            <a
-                                key={company.name}
-                                href={company.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base font-medium"
-                            >
-                                {company.name}
-                            </a>
-                        ))}
-                    </div>
-                </motion.div>
-            </div>
-
-            {/* Scroll indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2"
+          <p className="col-span-12 md:col-span-9 mt-8 md:mt-10 hero-reveal">
+            <span
+              className="font-serif italic text-foreground/85 leading-snug"
+              style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.875rem)' }}
             >
-                <motion.button
-                    onClick={scrollToWork}
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                    <ChevronDown className="w-6 h-6" />
-                </motion.button>
-            </motion.div>
-        </section>
-    );
+              "Protocol is product. Everything else is paint."
+            </span>
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom meta row */}
+      <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end">
+        <div className="col-span-12 md:col-span-5 hero-reveal">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+            <Link
+              to="/resume"
+              onClick={() => window.scrollTo(0, 0)}
+              className="accent-link"
+            >
+              Read resume →
+            </Link>
+            <a
+              href="mailto:shivampan98@gmail.com"
+              className="ink-link text-muted-foreground hover:text-foreground"
+            >
+              Say hi
+            </a>
+            <a
+              href="https://linkedin.com/in/shivam-sot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ink-link text-muted-foreground hover:text-foreground"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <div className="col-span-12 md:col-span-7 hero-reveal">
+          <div className="grid grid-cols-4 divide-x divide-[var(--hairline)] border-y border-[var(--hairline)]">
+            {[
+              { n: '5', suffix: 'yrs', label: 'Shipping Web3' },
+              { n: '100M', suffix: '+', label: 'Tx on launched L1' },
+              { n: '120', suffix: '+', label: 'Engineers led' },
+              { n: '8', suffix: '', label: 'Products shipped' },
+            ].map((m) => (
+              <div key={m.label} className="px-3 md:px-5 py-5 md:py-6">
+                <p className="leading-none flex items-baseline gap-1">
+                  <span className="font-serif italic text-accent text-4xl md:text-5xl">
+                    {m.n}
+                  </span>
+                  {m.suffix && (
+                    <span className="font-serif italic text-accent text-2xl md:text-3xl">
+                      {m.suffix}
+                    </span>
+                  )}
+                </p>
+                <p className="mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] uppercase tracking-[0.14em] text-foreground/65 leading-snug">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default HeroSection;
