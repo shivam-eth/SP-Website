@@ -71,7 +71,7 @@ const Cursor = () => {
           width: 6,
           height: 6,
           borderRadius: 999,
-          background: '#EAE6DD',
+          background: '#ECECEE',
           mixBlendMode: 'difference',
         }}
       />
@@ -83,7 +83,7 @@ const Cursor = () => {
           width: 28,
           height: 28,
           borderRadius: 999,
-          border: '1px solid rgba(234, 230, 221, 0.35)',
+          border: '1px solid rgba(236, 236, 238, 0.35)',
           mixBlendMode: 'difference',
           transition: 'width 320ms cubic-bezier(0.16,1,0.3,1), height 320ms cubic-bezier(0.16,1,0.3,1), border-color 320ms cubic-bezier(0.16,1,0.3,1)',
         }}

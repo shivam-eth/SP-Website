@@ -138,7 +138,7 @@ const FeaturedWorkSection = () => {
                 href={p.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block py-10 md:py-12 border-b border-[var(--hairline)] hover:bg-[rgba(234,230,221,0.015)] transition-colors duration-300"
+                className="group block py-10 md:py-12 border-b border-[var(--hairline)] hover:bg-[rgba(255,255,255,0.015)] transition-colors duration-300"
               >
                 <div className="grid grid-cols-12 gap-6 items-start">
                   <span className="col-span-2 md:col-span-1 font-mono text-[13px] text-foreground/60 pt-2">

@@ -142,7 +142,7 @@ const HeroSection = () => {
             </Link>
             <a
               href="mailto:shivampan98@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(234,230,221,0.04)] transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-200"
             >
               Say hi
             </a>
@@ -150,7 +150,7 @@ const HeroSection = () => {
               href="https://linkedin.com/in/shivam-sot"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(234,230,221,0.04)] transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-200"
             >
               LinkedIn <span aria-hidden>↗</span>
             </a>

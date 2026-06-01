@@ -269,7 +269,7 @@ const ResumePage = () => {
                       {group.items.map((s) => (
                         <span
                           key={s}
-                          className="border border-[var(--hairline)] -ml-px -mt-px px-4 py-2.5 text-[13px] md:text-sm text-foreground/85 font-mono tracking-wide hover:bg-[rgba(234,230,221,0.025)] hover:border-[var(--hairline-strong)] transition-colors duration-200"
+                          className="border border-[var(--hairline)] -ml-px -mt-px px-4 py-2.5 text-[13px] md:text-sm text-foreground/85 font-mono tracking-wide hover:bg-[rgba(255,255,255,0.025)] hover:border-[var(--hairline-strong)] transition-colors duration-200"
                         >
                           {s}
                         </span>

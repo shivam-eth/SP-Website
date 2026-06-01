@@ -64,7 +64,7 @@ const NowSection = () => {
         <ul>
           {now.map((n) => (
             <li key={n.label} className="now-row group">
-              <div className="grid grid-cols-12 gap-6 py-8 md:py-10 border-b border-[var(--hairline)] transition-colors duration-300 group-hover:bg-[rgba(234,230,221,0.015)]">
+              <div className="grid grid-cols-12 gap-6 py-8 md:py-10 border-b border-[var(--hairline)] transition-colors duration-300 group-hover:bg-[rgba(255,255,255,0.015)]">
                 <p className="col-span-12 md:col-span-3 font-mono text-xs uppercase tracking-wider text-muted-foreground pt-1">
                   {n.label}
                 </p>
