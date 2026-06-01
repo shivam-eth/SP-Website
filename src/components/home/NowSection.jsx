@@ -7,15 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 const now = [
   {
     label: 'Reading',
-    body: 'How MEV-resistant designs shift onboarding assumptions — Flashbots research notes, Espresso sequencer threads.',
+    body: 'Tokenized treasuries and credit. BlackRock BUIDL, Ondo, and how onchain settlement is bleeding into TradFi rails.',
   },
   {
     label: 'Building',
-    body: 'A short essay series on audit-gated release planning. Two drafts in. Public soon.',
+    body: 'Agent-to-agent payment gateway rails for the agentic economy. AgenticRPC underneath, powering autonomous payments between agents.',
   },
   {
     label: 'Thinking about',
-    body: 'Chain abstraction is a UX problem dressed as an infra problem. Most teams ship it inside out.',
+    body: 'Chain abstraction is a UX problem dressed as an infra problem. Most teams ship it inside out. Also, how on-chain liquidity can move freely across chains without trading away consensus security or decentralization.',
   },
 ];
 

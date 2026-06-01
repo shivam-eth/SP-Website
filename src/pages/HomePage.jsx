@@ -6,12 +6,14 @@ import { Menu, X } from 'lucide-react';
 import HeroSection from '../components/home/HeroSection';
 import FeaturedWorkSection from '../components/home/FeaturedWorkSection';
 import AboutSection from '../components/home/AboutSection';
+import ExperienceSection from '../components/home/ExperienceSection';
 import NowSection from '../components/home/NowSection';
 import OutsideSection from '../components/home/OutsideSection';
 
 const navItems = [
   { href: '#featured-work', label: 'Work' },
   { href: '#about', label: 'How' },
+  { href: '#experience', label: 'Track' },
   { href: '#now', label: 'Now' },
   { href: '#outside', label: 'Life' },
 ];
@@ -112,6 +114,7 @@ const HomePage = () => {
         <HeroSection />
         <FeaturedWorkSection />
         <AboutSection />
+        <ExperienceSection />
         <NowSection />
         <OutsideSection />
 

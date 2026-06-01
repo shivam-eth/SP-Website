@@ -60,35 +60,30 @@ const HeroSection = () => {
       ref={rootRef}
       className="relative min-h-screen flex flex-col"
     >
-      {/* Top meta row */}
-      <div className="container-edge pt-32 md:pt-36 grid grid-cols-12 gap-6 items-start">
-        <div className="col-span-6 md:col-span-3 hero-reveal">
-          <p className="eyebrow">Shivam Pandiya</p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Product manager. Protocol-layer focus.
-          </p>
-        </div>
-        <div className="hidden md:block md:col-span-6" />
-        <div className="col-span-6 md:col-span-3 flex md:justify-end hero-reveal">
-          <div className="inline-flex items-center gap-2 text-sm">
-            <span className="pulse-dot" />
-            <span className="text-muted-foreground">Open to new roles · 2026</span>
+      {/* Intro + Headline — shared container-edge */}
+      <div className="container-edge flex-1 flex flex-col pt-32 md:pt-36">
+        {/* Intro grid */}
+        <div className="grid grid-cols-12 gap-6 w-full">
+          <div className="col-span-12 md:col-span-11 hero-reveal">
+            <p className="eyebrow">Shivam Pandiya</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Product Manager. Web3 &amp; emerging tech.
+            </p>
           </div>
         </div>
-      </div>
 
-      {/* Headline + subtext */}
-      <div className="container-edge flex-1 flex items-center mt-12 md:mt-0">
-        <div className="grid grid-cols-12 gap-6 w-full">
-          <h1
-            className="col-span-12 md:col-span-11 text-foreground font-medium"
-            style={{
-              fontFamily: 'var(--font-display)',
-              letterSpacing: '-0.03em',
-              lineHeight: 1.02,
-              fontSize: 'clamp(2.25rem, 6.2vw, 5.5rem)',
-            }}
-          >
+        {/* Headline vertically centered in remaining space, same grid structure */}
+        <div className="flex-1 flex items-center mt-12 md:mt-0">
+          <div className="grid grid-cols-12 gap-6 w-full">
+            <h1
+              className="col-span-12 md:col-span-11 text-foreground font-medium"
+              style={{
+                fontFamily: 'var(--font-display)',
+                letterSpacing: '-0.03em',
+                lineHeight: 1.02,
+                fontSize: 'clamp(2.25rem, 6.2vw, 5.5rem)',
+              }}
+            >
             {HEADLINE_LINES.map((line, li) => (
               <span key={li} className="block">
                 {line.map((w, wi) => (
@@ -130,23 +125,24 @@ const HeroSection = () => {
               "Protocol is product. Everything else is paint."
             </span>
           </p>
+          </div>
         </div>
       </div>
 
       {/* Bottom meta row */}
       <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end">
         <div className="col-span-12 md:col-span-5 hero-reveal">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
             <Link
               to="/resume"
               onClick={() => window.scrollTo(0, 0)}
-              className="accent-link"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-accent bg-accent text-background text-sm md:text-[15px] font-medium tracking-tight hover:bg-accent/90 transition-colors duration-200"
             >
-              Read resume →
+              Read resume <span aria-hidden>→</span>
             </Link>
             <a
               href="mailto:shivampan98@gmail.com"
-              className="ink-link text-muted-foreground hover:text-foreground"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(234,230,221,0.04)] transition-colors duration-200"
             >
               Say hi
             </a>
@@ -154,10 +150,14 @@ const HeroSection = () => {
               href="https://linkedin.com/in/shivam-sot"
               target="_blank"
               rel="noopener noreferrer"
-              className="ink-link text-muted-foreground hover:text-foreground"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[var(--hairline-strong)] text-foreground text-sm md:text-[15px] font-medium tracking-tight hover:border-foreground hover:bg-[rgba(234,230,221,0.04)] transition-colors duration-200"
             >
-              LinkedIn ↗
+              LinkedIn <span aria-hidden>↗</span>
             </a>
+            <div className="inline-flex items-center gap-2 pl-2 md:pl-4 text-sm">
+              <span className="pulse-dot" />
+              <span className="text-muted-foreground whitespace-nowrap">Open to new roles · 2026</span>
+            </div>
           </div>
         </div>
 

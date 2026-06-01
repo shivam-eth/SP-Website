@@ -6,6 +6,21 @@ import { ArrowUpRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const alsoProjects = [
+  {
+    name: 'Vine Labs',
+    emphasis: 'Layer-0 · interoperability',
+    body: 'Modular cross-chain functionality for metaverse applications.',
+    link: 'https://www.vinelayer0.com/',
+  },
+  {
+    name: 'Vuelo',
+    emphasis: 'GenAI healthcare assistant',
+    body: 'Fine-tuned LLMs on curated medical context; safe-response and fallback design.',
+    link: '#',
+  },
+];
+
 const projects = [
   {
     n: '01',
@@ -164,6 +179,37 @@ const FeaturedWorkSection = () => {
             </li>
           ))}
         </ul>
+
+        {/* Also — secondary project highlights */}
+        <div className="mt-10 md:mt-14">
+          <div className="hairline mb-8 md:mb-10" />
+          <div className="grid grid-cols-12 gap-6 md:gap-10">
+            <p className="eyebrow col-span-12 md:col-span-2">Also</p>
+            <ul className="col-span-12 md:col-span-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+              {alsoProjects.map((p) => (
+                <li key={p.name} className="work-row">
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <h4 className="text-foreground text-xl md:text-2xl tracking-tight flex items-baseline gap-2 group-hover:text-accent transition-colors duration-200">
+                      {p.name}
+                      <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </h4>
+                    <p className="mt-2 font-mono text-[12.5px] md:text-[13px] uppercase tracking-[0.12em] text-foreground/65">
+                      {p.emphasis}
+                    </p>
+                    <p className="mt-4 text-foreground/75 leading-relaxed text-[15px] md:text-base max-w-[42ch]">
+                      {p.body}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         {/* Marquee strip */}
         <div className="mt-24 md:mt-32">
