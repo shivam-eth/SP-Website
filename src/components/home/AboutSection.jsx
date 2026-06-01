@@ -1,52 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { aboutItems } from '../../data/homeData';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const principles = [
+  {
+    n: 'i.',
+    title: 'Protocol first, surface second',
+    body: 'Most blockchain UX failure traces back to a leaky abstraction. I read the protocol spec before I sketch a flow.',
+  },
+  {
+    n: 'ii.',
+    title: 'Coordination is the work',
+    body: 'Layer-1 launches are won by sequencing — security audits, exchange listings, validator onboarding, docs. The product is the calendar.',
+  },
+  {
+    n: 'iii.',
+    title: 'Write more than you ship',
+    body: 'Memos clarify thinking, surface dissent, and outlast Slack threads. Every roadmap decision I make has a one-page memo behind it.',
+  },
+];
 
 const AboutSection = () => {
-    return (
-        <section id="about" className="py-24 md:py-32 px-4 md:px-6">
-            <div className="container-custom">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12 md:mb-16"
-                >
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        <span className="gradient-text">What I Bring</span>
-                    </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        A unique blend of product strategy, technical depth, and cross-functional leadership.
-                    </p>
-                </motion.div>
+  const ref = useRef(null);
 
-                <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-                    {aboutItems.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative group"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="relative bg-card/30 border border-border hover:border-primary/30 rounded-2xl p-6 md:p-8 text-center transition-all duration-300">
-                                <div className="flex justify-center mb-6">
-                                    <div className="p-4 rounded-xl bg-primary/10 text-primary">
-                                        {item.icon}
-                                    </div>
-                                </div>
-                                <h3 className="text-xl md:text-2xl font-semibold mb-4">{item.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{item.description}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = gsap.context(() => {
+      gsap.from('.about-line', {
+        y: 24,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'expo.out',
+        stagger: 0.08,
+        scrollTrigger: { trigger: ref.current, start: 'top 70%' },
+      });
+    }, ref);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="about" ref={ref} className="relative py-14 md:py-20">
+      <div className="container-edge">
+        <div className="grid grid-cols-12 gap-6">
+          <p className="eyebrow col-span-12 md:col-span-2 about-line">How I work</p>
+
+          <div className="col-span-12 md:col-span-9 md:col-start-3">
+            <h2 className="display-lg text-foreground max-w-[16ch] about-line">
+              Three things I <em className="serif text-accent">don't</em> compromise on.
+            </h2>
+
+            <ol className="mt-16 md:mt-20 grid md:grid-cols-3 gap-10 md:gap-12">
+              {principles.map((p) => (
+                <li key={p.n} className="about-line">
+                  <div className="flex items-baseline gap-3 mb-4">
+                    <span className="font-serif italic text-accent text-xl">{p.n}</span>
+                    <span className="hairline flex-1" />
+                  </div>
+                  <h3 className="text-lg md:text-xl text-foreground font-medium tracking-tight mb-3">
+                    {p.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-[15px] max-w-[34ch]">
+                    {p.body}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default AboutSection;

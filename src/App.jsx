@@ -3,19 +3,17 @@ import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Components
-import ParticleBackground from './components/ParticleBackground';
-import SwirlCursor from './components/SwirlCursor';
+import SmoothScroll from './components/SmoothScroll';
+import Cursor from './components/Cursor';
 import HomePage from './pages/HomePage';
 import ResumePage from './pages/ResumePage';
 
 function App() {
   return (
     <Router>
+      <SmoothScroll />
+      <Cursor />
       <div className="min-h-screen bg-background text-foreground relative">
-        <ParticleBackground />
-        <SwirlCursor />
-        
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -28,4 +26,3 @@ function App() {
 }
 
 export default App;
-
