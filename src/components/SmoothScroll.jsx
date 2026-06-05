@@ -13,6 +13,9 @@ const SmoothScroll = () => {
       wheelMultiplier: 1,
     });
 
+    // Expose for programmatic scrolls (e.g. logo → hero)
+    window.lenis = lenis;
+
     let rafId;
     const raf = (time) => {
       lenis.raf(time);
@@ -23,6 +26,7 @@ const SmoothScroll = () => {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete window.lenis;
     };
   }, []);
 

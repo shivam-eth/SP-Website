@@ -47,7 +47,15 @@ const HomePage = () => {
         }`}
       >
         <div className="container-edge h-16 md:h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-sm tracking-tight">
+          <Link
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              if (window.lenis) window.lenis.scrollTo(0, { duration: 1.1 });
+              else window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-2 text-sm tracking-tight cursor-target"
+          >
             <span className="text-foreground/90">Shivam Pandiya</span>
           </Link>
 
