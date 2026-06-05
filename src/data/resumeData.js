@@ -1,4 +1,4 @@
-export const summary = "Product manager focused on the protocol layer. Five years across Layer-1 launches (5irechain, Qubetics), bridges, staking, wallets, and DePIN. I work closest to protocol and security teams, and I write about the parts of the stack that leak into UX. Most recent year: shipped chain-abstraction flows and validator onboarding for a Substrate-based L1, and collaborated with CertiK and Hacken on audit-gated releases. Comfortable with GenAI in the product loop — prompt design, LLM-assisted support flows, AI for discovery — when it earns its place.";
+export const summary = "Product manager focused on the protocol layer, with 5+ years and 50+ products across Web3 infrastructure, Layer-1 launches, RWA tokenization, and digital-asset platforms. Owned product for infrastructure supporting 82 protocol customers, and shipped a Layer-1 ecosystem that reached 53K+ wallets, 250 validators, and $250M+ TVL. I work closest to protocol and security teams (audit-gated releases with CertiK and Hacken), launched Instanodes — a multi-chain infra platform across 50+ networks — and led Blockmaze's RWA tokenization strategy. AI is part of how I ship: autonomous n8n/Notion agents, LLM evaluation (GPT, Claude, Grok, Llama, Bedrock), and Claude Code-assisted delivery — used when it earns its place.";
 
 export const experiences = [
   {
@@ -7,13 +7,15 @@ export const experiences = [
     duration: "Jun '21 - Present",
     location: "Chandigarh, IN",
     achievements: [
-      "Own end-to-end product delivery for Web3 platforms, decentralized finance applications and crypto exchanges. Designed roadmaps and planned backlogs across multiple devlopment areas (protocol, backend, wallet, DevOps).",
-      "Led multi-team execution across protocol, backend, DevOps, and wallet teams (120+ total), ensuring aligned roadmaps and coordinated releases across multiple decentralized applications.",
-      "Worked on tokenomics models and TGE planning with partner ecosystems, shaping incentive design and user acquisition strategy for public launches.",
-      "Collaborated closely with UX and research teams to create simplified flows for trading, liquidity, and collateral operations.",
-      "Collaborated with security teams to integrate audit partners (CertiK, Hacken) into milestones, ensuring releases met protocol, compliance, and safety expectations.",
-      "Collaborated with protocol engineering teams working across Cosmos SDK, Substrate, Hyperledger, and Corda architectures to define product expectations and user-facing behaviors.",
-      "Implemented Feature Flagging and CI/CD pipelines to increase deployment frequency from bi-weekly to daily."
+      "Led product strategy and delivery for 50+ products across Web3 infrastructure, digital assets, tokenization, trading, AI applications, and enterprise software. Acted as Lead PM across a team of 12 PMs/POs, aligning 120+ contributors over protocol, backend, DevOps, QA, and wallet teams.",
+      "Managed engagements for 25+ clients and contributed to blockchain initiatives valued up to $1.5M, while running an active portfolio of 3 concurrent products.",
+      "Launched Instanodes, a multi-chain infrastructure platform (RPC, Node-/Validator-/Rollup-as-a-Service, appchains, dedicated infra) across 50+ networks; defined strategy, roadmap, PRDs, pricing, and packaging, reaching 82 protocol customers.",
+      "Introduced Dedicated Clusters and one-click private blockchain deployment, contributing $250K+ in quarterly recurring revenue from active infrastructure contracts.",
+      "Led product strategy for Blockmaze, a Layer-0 RWA tokenization ecosystem (gold, bonds, equities) — defining DAO governance, issuer/investor onboarding, and KYC/KYB across India, UAE, and US markets.",
+      "Worked on tokenomics models and TGE planning with partner ecosystems, and collaborated with UX/research teams on simplified flows for trading, liquidity, and collateral operations.",
+      "Collaborated with security teams to integrate audit partners (CertiK, Hacken) into milestones, across Cosmos SDK, Substrate, Hyperledger, and Corda architectures.",
+      "Applied AI-assisted workflows across discovery, research, documentation, and prototyping — building autonomous n8n/Notion agents that auto-generated 350+ client proposals and cut documentation cycles from days to hours.",
+      "Implemented feature flagging and CI/CD pipelines to increase deployment frequency from bi-weekly to daily."
     ]
   },
   {
@@ -23,7 +25,7 @@ export const experiences = [
     location: "Remote",
     achievements: [
       "Managed backlog and delivery for ecosystem products: staking, governance, bridge, wallets, and developer tools. Breaking down multi-month epics into clear, testable user stories.",
-      "Led the development & launch of the layer 1 blockchain, achieving over 100+ million transactions in the first month, built on a Rust-based chain architecture.",
+      "Led the development & launch of the Layer-1 blockchain, achieving 10M+ transactions in the first month and reaching 53K+ mainnet wallets, 250 validators, and $250M+ TVL on a Rust-based chain architecture.",
       "Contributed to cross-chain architecture discussions and designed UX flows for bridging/staking that simplified complex protocol operations for retail users.",
       "Represented product during ecosystem demo calls, investor sessions, and developer onboarding walkthroughs.",
       "Improved sprint velocity (~20%) by providing clear acceptance criteria, refining stories, and aligning on definition of done."
@@ -43,6 +45,26 @@ export const experiences = [
 ];
 
 export const projects = [
+  {
+    name: "Instanodes",
+    description: "Multi-chain Web3 Infrastructure Platform",
+    features: [
+      "Launched a multi-chain infrastructure platform: RPC, Node-/Validator-/Rollup-as-a-Service, appchains, and dedicated infrastructure across 50+ networks.",
+      "Defined product strategy, roadmap, PRDs, pricing research, and service packaging, reaching 82 protocol customers including exchanges, wallets, and dApps.",
+      "Introduced Dedicated Clusters and one-click private chain deployment, contributing $250K+ in quarterly recurring revenue."
+    ],
+    link: "https://www.instanodes.io/"
+  },
+  {
+    name: "Blockmaze",
+    description: "Layer-0 RWA Tokenization Ecosystem",
+    features: [
+      "Led product strategy and platform design for governance-driven tokenization of real-world assets — gold, bonds, and equities.",
+      "Designed issuer onboarding, investor onboarding, DAO governance, KYC/KYB verification, and asset issuance workflows across India, UAE, and US markets.",
+      "Partnered with legal and compliance stakeholders to define scalable frameworks for retail and institutional participants."
+    ],
+    link: "https://blockmaze.org/"
+  },
   {
     name: "Qubetics",
     description: "Layer-1 Blockchain (Chain Abstraction + DePIN)",
@@ -92,6 +114,18 @@ export const projects = [
 
 export const portfolioItems = [
   {
+    title: "Instanodes",
+    description: "Multi-chain Web3 infrastructure platform — RPC, Node-/Validator-/Rollup-as-a-Service, appchains, and dedicated infra across 50+ networks. Reached 82 protocol customers and $250K+ quarterly recurring revenue.",
+    techStack: ["RPC", "Node-as-a-Service", "Infrastructure"],
+    link: "https://www.instanodes.io/"
+  },
+  {
+    title: "Blockmaze",
+    description: "Layer-0 RWA tokenization ecosystem for gold, bonds, and equities. Designed DAO governance, issuer/investor onboarding, and KYC/KYB workflows across India, UAE, and US markets.",
+    techStack: ["RWA", "Tokenization", "Governance"],
+    link: "https://blockmaze.org/"
+  },
+  {
     title: "Qubetics",
     description: "Layer-1 Blockchain (Chain Abstraction + DePIN). Defined product flows for chain abstraction, validator roles, staking logic, and early dVPN features. Worked with blockchain devs to translate technical constraints into intuitive UI behaviors.",
     techStack: ["Chain Abstraction", "DePIN", "Layer-1"],
@@ -128,9 +162,13 @@ export const skills = [
     category: "Key Skills", 
     items: ["Product Strategy", "Roadmap Development", "Multi-Tasking", "Team Collaboration", "Feature Prioritisation", "Scrum", "Design Oriented", "Market Research", "Problem Solving", "Client Consultation", "Prototyping", "Product Delivery"] 
   },
-  { 
-    category: "Technical Skills", 
-    items: ["MS Excel", "Google Analytics", "Jira", "Confluence", "Figma", "Miro", "Postman", "EVM", "Substrate", "Cosmos", "Hyperledger", "Chain abstraction", "DePIN", "DeFi"] 
+  {
+    category: "Technical Skills",
+    items: ["MS Excel", "Google Analytics", "Jira", "Confluence", "Figma", "Miro", "Postman", "EVM", "Substrate", "Cosmos", "Hyperledger", "Chain abstraction", "DePIN", "DeFi"]
+  },
+  {
+    category: "AI & Automation",
+    items: ["Generative AI", "LLM Evaluation", "Prompt Engineering", "Agentic Workflows", "Conversational UX", "n8n", "Notion AI", "Claude Code", "Codex", "Windsurf", "Bolt", "v0"]
   }
 ];
 

@@ -5,7 +5,7 @@ import { ArrowLeft, Download, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import resumePDF from '../assets/Shivam_Pandiya_Resume.pdf';
+import resumePDF from '../assets/Shivam_Pandiya_Product_Manager.pdf';
 import {
   summary,
   experiences,
@@ -96,7 +96,7 @@ const ResumePage = () => {
           </Link>
           <a
             href={resumePDF}
-            download="Shivam_Pandiya_Resume.pdf"
+            download="Shivam_Pandiya_Product_Manager.pdf"
             className="inline-flex items-center gap-2 text-sm accent-link"
           >
             <Download className="w-4 h-4" />
@@ -104,6 +104,27 @@ const ResumePage = () => {
           </a>
         </div>
       </header>
+
+      {/* Mobile section nav — horizontal scroll pills (replaces the desktop sticky aside) */}
+      <nav className="lg:hidden fixed top-16 md:top-20 left-0 right-0 z-30 bg-background/85 backdrop-blur-md border-b border-[var(--hairline)]">
+        <div className="container-edge">
+          <div className="flex gap-2 overflow-x-auto py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {sections.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => goTo(s.id)}
+                className={`shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-[11px] font-mono uppercase tracking-[0.12em] border transition-colors duration-200 ${
+                  active === s.id
+                    ? 'border-accent bg-accent text-background'
+                    : 'border-[var(--hairline-strong)] text-muted-foreground'
+                }`}
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
 
       {/* Document */}
       <article className="container-edge pt-32 md:pt-40 pb-32">
@@ -178,7 +199,7 @@ const ResumePage = () => {
               <SectionTitle index="02" label="Experience" />
               <ul className="space-y-12 md:space-y-16">
                 {experiences.map((exp) => (
-                  <li key={exp.company} className="grid grid-cols-12 gap-6">
+                  <li key={exp.company} className="grid grid-cols-12 gap-2 md:gap-6">
                     <div className="col-span-12 md:col-span-3">
                       <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                         {exp.duration}
@@ -219,7 +240,7 @@ const ResumePage = () => {
               <ul className="divide-y divide-[var(--hairline)]">
                 {projects.map((p) => (
                   <li key={p.name} className="py-8 md:py-10">
-                    <div className="grid grid-cols-12 gap-6">
+                    <div className="grid grid-cols-12 gap-2 md:gap-6">
                       <div className="col-span-12 md:col-span-4">
                         <a
                           href={p.link}
@@ -285,7 +306,7 @@ const ResumePage = () => {
               <SectionTitle index="05" label="Certifications" />
               <ul className="divide-y divide-[var(--hairline)]">
                 {certifications.map((c) => (
-                  <li key={c.name} className="py-5 grid grid-cols-12 gap-6 items-baseline">
+                  <li key={c.name} className="py-5 grid grid-cols-12 gap-1.5 md:gap-6 md:items-baseline">
                     <span className="col-span-12 md:col-span-2 font-mono text-xs uppercase tracking-wider text-muted-foreground">
                       {c.tag}
                     </span>
@@ -305,7 +326,7 @@ const ResumePage = () => {
               <SectionTitle index="06" label="Education" />
               <ul className="divide-y divide-[var(--hairline)]">
                 {education.map((e) => (
-                  <li key={e.degree} className="py-5 grid grid-cols-12 gap-6 items-baseline">
+                  <li key={e.degree} className="py-5 grid grid-cols-12 gap-1.5 md:gap-6 md:items-baseline">
                     <span className="col-span-12 md:col-span-3 font-mono text-xs uppercase tracking-wider text-muted-foreground">
                       {e.year}
                     </span>
@@ -323,7 +344,7 @@ const ResumePage = () => {
             {/* End */}
             <div className="r-block pt-12 border-t border-[var(--hairline)] flex items-center justify-between text-xs font-mono uppercase tracking-wider text-muted-foreground">
               <span>End of document</span>
-              <a href={resumePDF} download="Shivam_Pandiya_Resume.pdf" className="accent-link">
+              <a href={resumePDF} download="Shivam_Pandiya_Product_Manager.pdf" className="accent-link">
                 Download PDF ↓
               </a>
             </div>
@@ -340,7 +361,7 @@ const SectionTitle = ({ index, label }) => (
       <span className="font-serif italic text-accent text-[0.6em] align-baseline mr-3">{index}</span>
       {label}
     </h2>
-    <span className="hairline flex-1 ml-8 mb-3" />
+    <span className="hairline flex-1 ml-4 md:ml-8 mb-3" />
   </div>
 );
 

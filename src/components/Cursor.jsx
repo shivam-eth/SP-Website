@@ -73,6 +73,8 @@ const Cursor = () => {
           borderRadius: 999,
           background: '#ECECEE',
           mixBlendMode: 'difference',
+          opacity: hovering ? 0 : 1,
+          transition: 'opacity 160ms cubic-bezier(0.16,1,0.3,1)',
         }}
       />
       <div
@@ -85,7 +87,8 @@ const Cursor = () => {
           borderRadius: 999,
           border: '1px solid rgba(236, 236, 238, 0.35)',
           mixBlendMode: 'difference',
-          transition: 'width 320ms cubic-bezier(0.16,1,0.3,1), height 320ms cubic-bezier(0.16,1,0.3,1), border-color 320ms cubic-bezier(0.16,1,0.3,1)',
+          opacity: hovering ? 0 : 1,
+          transition: 'opacity 160ms cubic-bezier(0.16,1,0.3,1)',
         }}
       />
     </>

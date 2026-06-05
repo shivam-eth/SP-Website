@@ -154,7 +154,7 @@ const OutsideSection = () => {
                       src={a.image}
                       alt={a.alt}
                       loading="lazy"
-                      className={`block w-full h-[420px] md:h-[520px] ${
+                      className={`block w-full h-[300px] sm:h-[400px] md:h-[520px] ${
                         a.fit === 'contain' ? 'object-contain' : 'object-cover'
                       }`}
                     />

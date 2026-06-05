@@ -12,7 +12,7 @@ const experiences = [
     period: 'Jun 2021 — Present',
     location: 'Chandigarh, IN',
     body:
-      'End-to-end product delivery for Web3 platforms, DeFi applications, and exchanges. Coordinate roadmaps and releases across protocol, backend, DevOps, and wallet teams — 120+ engineers in total.',
+      'Lead PM across 12 PMs and POs, aligning 120+ contributors over protocol, backend, DevOps, and wallet teams. 50+ products for 25+ clients, initiatives up to $1.5M. Launched Instanodes (82 protocol customers) and led Blockmaze RWA strategy.',
   },
   {
     role: 'Product Owner',
@@ -21,7 +21,7 @@ const experiences = [
     period: 'Oct 2022 — Mar 2025',
     location: 'Remote',
     body:
-      'Launched a Layer-1 that processed 100M+ transactions in its first month. Owned staking, governance, bridge, wallets, and developer tools.',
+      'Launched a Layer-1 that processed 10M+ transactions in its first month — reaching 53K+ wallets, 250 validators, and $250M+ TVL. Owned staking, governance, bridge, wallets, and developer tools.',
   },
   {
     role: 'Research Analyst',

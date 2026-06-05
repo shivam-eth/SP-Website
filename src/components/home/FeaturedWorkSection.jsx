@@ -8,22 +8,61 @@ gsap.registerPlugin(ScrollTrigger);
 
 const alsoProjects = [
   {
+    name: '5irechain',
+    emphasis: 'Layer-1 · mainnet',
+    body: 'Owned staking, governance, bridge, and wallets. Mainnet hit 10M+ transactions month one — 53K+ wallets, 250 validators, $250M+ TVL.',
+    link: 'https://5ire.org',
+  },
+  {
     name: 'Vine Labs',
     emphasis: 'Layer-0 · interoperability',
     body: 'Modular cross-chain functionality for metaverse applications.',
     link: 'https://www.vinelayer0.com/',
   },
   {
-    name: 'Vuelo',
-    emphasis: 'GenAI healthcare assistant',
-    body: 'Fine-tuned LLMs on curated medical context; safe-response and fallback design.',
-    link: '#',
+    name: 'BlockDAG',
+    emphasis: 'DAG · mobile',
+    body: 'Reworked onboarding and mining UX. v2 shipped with ~35% lift in app installs.',
+    link: 'https://blockdag.network/',
   },
 ];
 
 const projects = [
   {
     n: '01',
+    name: 'Instanodes',
+    emphasis: 'Infra',
+    role: 'Product Manager',
+    year: '2024 — Now',
+    outcome:
+      'Launched a multi-chain infrastructure platform — RPC, Node-, Validator-, and Rollup-as-a-Service plus dedicated infra across 50+ networks. Adopted by 82 protocol customers; Dedicated Clusters and one-click private chains drove $250K+ in quarterly recurring revenue.',
+    tags: ['RPC', 'NaaS / VaaS', 'Infra'],
+    link: 'https://www.instanodes.io/',
+  },
+  {
+    n: '02',
+    name: 'Blockmaze',
+    emphasis: 'Layer-0 · RWA',
+    role: 'Product Manager',
+    year: '2024',
+    outcome:
+      'Governance-driven tokenization of real-world assets — gold, bonds, equities. Designed issuer and investor onboarding, DAO governance, and KYC/KYB verification across India, UAE, and US markets.',
+    tags: ['RWA', 'Tokenization', 'Governance'],
+    link: 'https://blockmaze.org/',
+  },
+  {
+    n: '03',
+    name: 'Vuelo',
+    emphasis: 'GenAI · healthcare',
+    role: 'Product Manager',
+    year: '2024',
+    outcome:
+      'Led product for a GenAI healthcare assistant. Evaluated GPT, Claude, Grok, Llama, and Bedrock, then designed conversational UX, guardrails, escalation, and safe-response flows for sensitive health topics.',
+    tags: ['GenAI', 'LLM eval', 'Healthcare'],
+    link: '#',
+  },
+  {
+    n: '04',
     name: 'Qubetics',
     emphasis: 'Layer-1',
     role: 'Product Manager',
@@ -34,29 +73,7 @@ const projects = [
     link: 'https://www.qubetics.com/',
   },
   {
-    n: '02',
-    name: '5irechain',
-    emphasis: 'Mainnet',
-    role: 'Product Owner',
-    year: '2022 — 2025',
-    outcome:
-      'Owned ecosystem product surfaces — staking, governance, bridge, wallets, developer tooling. Mainnet launch landed 100M+ transactions in month one on a Rust-based Substrate chain.',
-    tags: ['Substrate', 'Bridges', 'Wallets'],
-    link: 'https://5ire.org',
-  },
-  {
-    n: '03',
-    name: 'BlockDAG',
-    emphasis: 'Mobile',
-    role: 'Product Manager',
-    year: '2023',
-    outcome:
-      'Reworked onboarding and mining UX flows. v2 release shipped with ~35% lift in app installs and a noticeably cleaner first-run path.',
-    tags: ['Mobile', 'Mining UX'],
-    link: 'https://blockdag.network/',
-  },
-  {
-    n: '04',
+    n: '05',
     name: 'Tomi',
     emphasis: 'DePIN',
     role: 'Product Manager',
@@ -122,7 +139,7 @@ const FeaturedWorkSection = () => {
               Work that <em className="serif text-accent">shipped</em>.
             </h2>
             <p className="mt-5 text-muted-foreground max-w-[52ch] text-base md:text-lg">
-              Four products, all in production. Selected for what they taught me about
+              Five products, all in production. Selected for what they taught me about
               protocol-layer trade-offs, not for their headline numbers.
             </p>
           </div>
@@ -148,7 +165,7 @@ const FeaturedWorkSection = () => {
                   <div className="col-span-10 md:col-span-5">
                     <h3 className="display-lg leading-none text-foreground">
                       {p.name}
-                      <span className="ml-3 font-serif italic text-muted-foreground text-[0.55em] align-middle">
+                      <span className="ml-3 font-serif italic text-muted-foreground text-[0.55em] align-middle whitespace-nowrap">
                         {p.emphasis}
                       </span>
                     </h3>

@@ -1,22 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
+import HeroGrid from './HeroGrid';
 
 const HEADLINE_LINES = [
   [
     { word: 'A', accent: false },
     { word: 'product', accent: false },
     { word: 'manager', accent: false },
+    { word: 'for', accent: false },
   ],
   [
-    { word: 'who', accent: false },
-    { word: 'reads', accent: false },
-    { word: 'the', accent: false },
+    { word: 'Web3,', accent: true },
+    { word: 'AI,', accent: true },
+    { word: 'and', accent: false },
   ],
   [
-    { word: 'protocol', accent: true },
-    { word: 'spec', accent: true },
-    { word: 'first.', accent: false },
+    { word: 'Fintech.', accent: true },
   ],
 ];
 
@@ -58,16 +58,19 @@ const HeroSection = () => {
   return (
     <section
       ref={rootRef}
-      className="relative min-h-screen flex flex-col"
+      className="relative min-h-screen flex flex-col overflow-hidden"
     >
+      {/* Cursor-reactive grid backdrop */}
+      <HeroGrid />
+
       {/* Intro + Headline — shared container-edge */}
-      <div className="container-edge flex-1 flex flex-col pt-32 md:pt-36">
+      <div className="container-edge flex-1 flex flex-col pt-32 md:pt-36 relative z-10">
         {/* Intro grid */}
         <div className="grid grid-cols-12 gap-6 w-full">
           <div className="col-span-12 md:col-span-11 hero-reveal">
             <p className="eyebrow">Shivam Pandiya</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Product Manager. Web3 &amp; emerging tech.
+              Product Manager | Web3, AI &amp; Financial Technology Products
             </p>
           </div>
         </div>
@@ -81,7 +84,7 @@ const HeroSection = () => {
                 fontFamily: 'var(--font-display)',
                 letterSpacing: '-0.03em',
                 lineHeight: 1.02,
-                fontSize: 'clamp(2.25rem, 6.2vw, 5.5rem)',
+                fontSize: 'clamp(2rem, 7vw, 5.5rem)',
               }}
             >
             {HEADLINE_LINES.map((line, li) => (
@@ -130,7 +133,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom meta row */}
-      <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end">
+      <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end relative z-10">
         <div className="col-span-12 md:col-span-5 hero-reveal">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
             <Link
@@ -162,14 +165,14 @@ const HeroSection = () => {
         </div>
 
         <div className="col-span-12 md:col-span-7 hero-reveal">
-          <div className="grid grid-cols-4 divide-x divide-[var(--hairline)] border-y border-[var(--hairline)]">
+          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-l border-[var(--hairline)]">
             {[
               { n: '5', suffix: 'yrs', label: 'Shipping Web3' },
-              { n: '100M', suffix: '+', label: 'Tx on launched L1' },
-              { n: '120', suffix: '+', label: 'Engineers led' },
-              { n: '8', suffix: '', label: 'Products shipped' },
+              { n: '50', suffix: '+', label: 'Products shipped' },
+              { n: '$250M', suffix: '+', label: 'TVL on launched L1' },
+              { n: '3', suffix: '', label: 'GenAI Products', noCaps: true },
             ].map((m) => (
-              <div key={m.label} className="px-3 md:px-5 py-5 md:py-6">
+              <div key={m.label} className="border-r border-b border-[var(--hairline)] px-4 md:px-5 py-5 md:py-6">
                 <p className="leading-none flex items-baseline gap-1">
                   <span className="font-serif italic text-accent text-4xl md:text-5xl">
                     {m.n}
@@ -180,7 +183,7 @@ const HeroSection = () => {
                     </span>
                   )}
                 </p>
-                <p className="mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] uppercase tracking-[0.14em] text-foreground/65 leading-snug">
+                <p className={`mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] ${m.noCaps ? 'normal-case' : 'uppercase'} tracking-[0.14em] text-foreground/65 leading-snug`}>
                   {m.label}
                 </p>
               </div>

@@ -120,10 +120,18 @@
     letter-spacing: 0;
   }
 
-  /* Hide native cursor only on devices with a fine pointer */
+  /* On fine-pointer devices the custom cursor stands in for the native one.
+     Exception: clickable elements keep the native hand pointer so links read
+     as links (the custom cursor hides itself on hover — see Cursor.jsx). */
   @media (pointer: fine) {
-    html, body, a, button, input, textarea, [role="button"] {
+    html, body {
       cursor: none;
+    }
+    a, button, [role="button"], label, .cursor-target {
+      cursor: pointer;
+    }
+    input, textarea, select {
+      cursor: text;
     }
   }
 
