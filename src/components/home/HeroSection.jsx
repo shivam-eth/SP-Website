@@ -6,14 +6,14 @@ import HeroGrid from './HeroGrid';
 const HEADLINE_LINES = [
   [
     { word: 'I', accent: false },
-    { word: 'decide', accent: false },
-    { word: 'what', accent: false },
-    { word: 'ships,', accent: false },
+    { word: 'build', accent: false },
+    { word: 'for', accent: false },
+    { word: 'the', accent: false },
+    { word: 'moment', accent: false },
   ],
   [
-    { word: 'and', accent: false },
-    { word: 'what', accent: true },
-    { word: 'waits.', accent: true },
+    { word: 'it', accent: true },
+    { word: 'breaks.', accent: true },
   ],
 ];
 

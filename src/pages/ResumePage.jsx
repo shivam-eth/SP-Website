@@ -5,7 +5,7 @@ import { ArrowLeft, Download, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import resumePDF from '../assets/Shivam_Pandiya_Product_Manager.pdf';
+import resumePDF from '../assets/Shivam_Pandiya_Resume.pdf';
 import {
   summary,
   experiences,
@@ -96,7 +96,7 @@ const ResumePage = () => {
           </Link>
           <a
             href={resumePDF}
-            download="Shivam_Pandiya_Product_Manager.pdf"
+            download="Shivam_Pandiya_Resume.pdf"
             className="inline-flex items-center gap-2 text-sm accent-link"
           >
             <Download className="w-4 h-4" />
@@ -344,7 +344,7 @@ const ResumePage = () => {
             {/* End */}
             <div className="r-block pt-12 border-t border-[var(--hairline)] flex items-center justify-between text-xs font-mono uppercase tracking-wider text-muted-foreground">
               <span>End of document</span>
-              <a href={resumePDF} download="Shivam_Pandiya_Product_Manager.pdf" className="accent-link">
+              <a href={resumePDF} download="Shivam_Pandiya_Resume.pdf" className="accent-link">
                 Download PDF ↓
               </a>
             </div>
