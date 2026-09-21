@@ -1,4 +1,4 @@
-export const summary = "Product manager focused on the protocol layer, with 5+ years and 50+ products across Web3 infrastructure, Layer-1 launches, RWA tokenization, and digital-asset platforms. Owned product for infrastructure supporting 82 protocol customers, and shipped a Layer-1 ecosystem that reached 53K+ wallets, 250 validators, and $250M+ TVL. I work closest to protocol and security teams (audit-gated releases with CertiK and Hacken), launched Instanodes — a multi-chain infra platform across 50+ networks — and led Blockmaze's RWA tokenization strategy. AI is part of how I ship: autonomous n8n/Notion agents, LLM evaluation (GPT, Claude, Grok, Llama, Bedrock), and Claude Code-assisted delivery — used when it earns its place.";
+export const summary = "Product owner with six years building across GenAI, fintech, and platform infrastructure. I took Instanodes from zero to 82 enterprise customers, running 600 to 700 million API requests a day at 99.95% uptime, with premium tiers contributing over $250K in quarterly recurring revenue. I make the API design calls myself, maintain the Swagger documentation customers integrate against, and build with Claude Code and Codex rather than waiting on engineering capacity. Payments work spans gateways, Stripe, invoicing, and Circle's CCTP for native USDC transfer. On the AI side I evaluate models on quality, safety and cost, then define what the model decides alone and where a person reviews.";
 
 export const experiences = [
   {
@@ -7,7 +7,7 @@ export const experiences = [
     duration: "Jun '21 - Present",
     location: "Chandigarh, IN",
     achievements: [
-      "Led product strategy and delivery for 50+ products across Web3 infrastructure, digital assets, tokenization, trading, AI applications, and enterprise software. Acted as Lead PM across a team of 12 PMs/POs, aligning 120+ contributors over protocol, backend, DevOps, QA, and wallet teams.",
+      "Own product vision, roadmap and backlog across three concurrent products, working alongside 12 product managers and owners and 120+ contributors across protocol, backend, DevOps, QA and wallet teams.",
       "Managed engagements for 25+ clients and contributed to blockchain initiatives valued up to $1.5M, while running an active portfolio of 3 concurrent products.",
       "Launched Instanodes, a multi-chain infrastructure platform (RPC, Node-/Validator-/Rollup-as-a-Service, appchains, dedicated infra) across 50+ networks; defined strategy, roadmap, PRDs, pricing, and packaging, reaching 82 protocol customers.",
       "Introduced Dedicated Clusters and one-click private blockchain deployment, contributing $250K+ in quarterly recurring revenue from active infrastructure contracts.",
@@ -25,7 +25,7 @@ export const experiences = [
     location: "Remote",
     achievements: [
       "Managed backlog and delivery for ecosystem products: staking, governance, bridge, wallets, and developer tools. Breaking down multi-month epics into clear, testable user stories.",
-      "Led the development & launch of the Layer-1 blockchain, achieving 10M+ transactions in the first month and reaching 53K+ mainnet wallets, 250 validators, and $250M+ TVL on a Rust-based chain architecture.",
+      "Led development and launch of a Rust-based Layer-1. The first month recorded 10M+ transactions across validator operations, ecosystem partners, developer testing and campaign activity, which shaped how I now define retention and cohort measures before a launch rather than after it.",
       "Contributed to cross-chain architecture discussions and designed UX flows for bridging/staking that simplified complex protocol operations for retail users.",
       "Represented product during ecosystem demo calls, investor sessions, and developer onboarding walkthroughs.",
       "Improved sprint velocity (~20%) by providing clear acceptance criteria, refining stories, and aligning on definition of done."

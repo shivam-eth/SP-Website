@@ -167,14 +167,18 @@ const HeroSection = () => {
         <div className="col-span-12 md:col-span-7 hero-reveal">
           <div className="grid grid-cols-2 md:grid-cols-4 border-t border-l border-[var(--hairline)]">
             {[
-              { n: '5', suffix: 'yrs', label: 'Shipping Web3' },
-              { n: '50', suffix: '+', label: 'Products shipped' },
-              { n: '$250M', suffix: '+', label: 'TVL on launched L1' },
-              { n: '3', suffix: '', label: 'GenAI Products', noCaps: true },
+              { n: '6', suffix: 'yrs', label: 'Building product' },
+              { n: '82', suffix: '', label: 'Enterprise customers' },
+              { n: '600-700M', suffix: '', label: 'API requests a day', compact: true },
+              { n: '$250K', suffix: '+', label: 'Quarterly recurring revenue' },
             ].map((m) => (
               <div key={m.label} className="border-r border-b border-[var(--hairline)] px-4 md:px-5 py-5 md:py-6">
                 <p className="leading-none flex items-baseline gap-1">
-                  <span className="font-serif italic text-accent text-4xl md:text-5xl">
+                  <span
+                    className={`font-serif italic text-accent ${
+                      m.compact ? 'text-[1.75rem] md:text-4xl' : 'text-4xl md:text-5xl'
+                    }`}
+                  >
                     {m.n}
                   </span>
                   {m.suffix && (
@@ -183,7 +187,7 @@ const HeroSection = () => {
                     </span>
                   )}
                 </p>
-                <p className={`mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] ${m.noCaps ? 'normal-case' : 'uppercase'} tracking-[0.14em] text-foreground/65 leading-snug`}>
+                <p className="mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] uppercase tracking-[0.14em] text-foreground/65 leading-snug">
                   {m.label}
                 </p>
               </div>

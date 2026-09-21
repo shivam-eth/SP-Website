@@ -10,7 +10,8 @@ const alsoProjects = [
   {
     name: '5irechain',
     emphasis: 'Layer-1 · mainnet',
-    body: 'Owned staking, governance, bridge, and wallets. Mainnet hit 10M+ transactions month one — 53K+ wallets, 250 validators, $250M+ TVL.',
+    body:
+      'Owned staking, governance, bridge, and wallets from testnet to mainnet. The launch recorded 10M+ transactions across validator operations, ecosystem partners, and campaign activity. It taught me to define retention before launch, not read headline counts after it.',
     link: 'https://5ire.org',
   },
   {
