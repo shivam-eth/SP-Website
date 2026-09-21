@@ -8,7 +8,7 @@ const principles = [
   {
     n: '01',
     label: 'Chose reliability',
-    body: 'A year into Instanodes the backlog held two quarters of customer requests. Analytics, API management, billing, a richer console. Before committing, I went back through our sales calls and separated what customers asked for from what they actually asked about when deciding to buy. The lists barely overlapped. Buying conversations were about uptime and what happened when a chain broke. I chose reliability and told the customers who had asked that their requests were deferred, with reasoning. Demos stopped stalling. Conversion improved. Two premium services became sellable that had not been before.',
+    body: 'A year into Instanodes the backlog held two quarters of customer requests. I went back through our sales calls and separated what customers asked for from what they asked about when deciding to buy. The lists barely overlapped. Buying conversations were about uptime and what happened when a chain broke. I chose reliability, and told the customers who had asked why their requests were deferred. Demos stopped stalling, conversion improved, and two premium services became sellable.',
     aside:
       'I argued from conversation notes rather than instrumented data. I define the metric before making the case now.',
   },

@@ -21,7 +21,7 @@ const activities = [
   {
     n: 'i.',
     label: 'Cycling',
-    stat: '50km+',
+    stat: '100km+',
     unit: 'monthly',
     body: 'Long routes through hill country. Most product clarity arrives mid-ride, two hours in, no inbox.',
     image: cyclingImage,

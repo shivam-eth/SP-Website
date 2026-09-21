@@ -172,7 +172,9 @@ const FeaturedWorkSection = () => {
                   <div className="col-span-10 md:col-span-5">
                     <h3 className="display-lg leading-none text-foreground">
                       {p.name}
-                      <span className="ml-3 font-serif italic text-muted-foreground text-[0.55em] align-middle whitespace-nowrap">
+                      {/* Sits beside the name from md up; drops to its own line on
+                          narrow phones, where nowrap would push the page wider. */}
+                      <span className="mt-1 block font-serif italic text-muted-foreground text-[0.55em] whitespace-nowrap md:mt-0 md:ml-3 md:inline md:align-middle">
                         {p.emphasis}
                       </span>
                     </h3>

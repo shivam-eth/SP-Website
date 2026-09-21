@@ -135,7 +135,7 @@ const HeroSection = () => {
 
       {/* Bottom meta row */}
       <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end relative z-10">
-        <div className="col-span-12 md:col-span-5 hero-reveal">
+        <div className="col-span-12 lg:col-span-5 hero-reveal">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
             <Link
               to="/resume"
@@ -165,8 +165,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-7 hero-reveal">
-          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-l border-[var(--hairline)]">
+        <div className="col-span-12 lg:col-span-7 hero-reveal">
+          <div className="grid grid-cols-2 xl:grid-cols-4 border-t border-l border-[var(--hairline)]">
             {[
               { n: '6', suffix: 'yrs', label: 'Building product' },
               { n: '82', suffix: '', label: 'Enterprise customers' },
@@ -174,16 +174,18 @@ const HeroSection = () => {
               { n: '$250K', suffix: '+', label: 'Quarterly recurring revenue' },
             ].map((m) => (
               <div key={m.label} className="border-r border-b border-[var(--hairline)] px-4 md:px-5 py-5 md:py-6">
-                <p className="leading-none flex items-baseline gap-1">
+                <p className="leading-none flex items-baseline gap-1 whitespace-nowrap">
                   <span
                     className={`font-serif italic text-accent ${
-                      m.compact ? 'text-[1.75rem] md:text-4xl' : 'text-4xl md:text-5xl'
+                      m.compact
+                        ? 'text-[1.6rem] md:text-[2rem]'
+                        : 'text-[2rem] md:text-4xl 2xl:text-5xl'
                     }`}
                   >
                     {m.n}
                   </span>
                   {m.suffix && (
-                    <span className="font-serif italic text-accent text-2xl md:text-3xl">
+                    <span className="font-serif italic text-accent text-xl md:text-2xl 2xl:text-3xl">
                       {m.suffix}
                     </span>
                   )}
