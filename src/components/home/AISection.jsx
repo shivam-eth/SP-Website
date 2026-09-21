@@ -25,7 +25,7 @@ const inPractice = [
   },
   {
     k: 'Applied GenAI',
-    headline: 'Vuelo — GenAI healthcare assistant',
+    headline: 'Vuelo · GenAI healthcare assistant',
     body: 'LLM evaluation, conversational UX, guardrails, and safe-response design for sensitive health topics.',
   },
 ];
@@ -66,7 +66,7 @@ const AISection = () => {
             </h2>
             <p className="mt-8 text-muted-foreground max-w-[56ch] text-lg leading-relaxed ai-line">
               I don't bolt AI on for show. I use it to compress the slow, repetitive parts of
-              product work — so the thinking gets more of the week.
+              product work, so the thinking gets more of the week.
             </p>
           </div>
         </div>

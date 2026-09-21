@@ -181,8 +181,8 @@ const ResumePage = () => {
               <h1 className="display-xl text-foreground">
                 Shivam <em className="serif text-accent">Pandiya</em>.
               </h1>
-              <p className="mt-6 text-muted-foreground max-w-[44ch]">
-                Product manager · Protocol-layer focus · Chandigarh, IN
+              <p className="mt-6 text-muted-foreground max-w-[56ch]">
+                Senior Product Owner · AI, FinTech &amp; Platform Products · Chandigarh, IN
               </p>
             </header>
 

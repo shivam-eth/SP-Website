@@ -33,7 +33,7 @@ const activities = [
     label: 'Trekking',
     stat: '15+',
     unit: 'peaks',
-    body: 'Hidden trails over marked ones. Elevation forces a longer time horizon — useful when roadmaps feel cramped.',
+    body: 'Hidden trails over marked ones. Elevation forces a longer time horizon, useful when roadmaps feel cramped.',
     image: trekkingImage,
     alt: 'On a ridge, mid-trek',
     caption: 'Himachal · ridge line',
@@ -41,7 +41,7 @@ const activities = [
   {
     n: 'iii.',
     label: 'Marathons',
-    stat: '12+',
+    stat: '10+',
     unit: 'finished',
     body: 'Endurance is a quieter skill than it looks. Pacing a 42k is closer to shipping a mainnet than to a sprint.',
     image: runningImage,
@@ -133,7 +133,7 @@ const OutsideSection = () => {
             </h2>
             <p className="mt-8 text-muted-foreground max-w-[58ch] text-lg leading-relaxed outside-line">
               The parts of the week that don't sit on a Linear board. They shape how I think about pacing,
-              coordination, and what's actually worth pushing through — long rides, long trails, long runs.
+              coordination, and what's actually worth pushing through. Long rides, long trails, long runs.
             </p>
           </div>
         </div>

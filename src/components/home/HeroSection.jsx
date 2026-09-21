@@ -5,18 +5,19 @@ import HeroGrid from './HeroGrid';
 
 const HEADLINE_LINES = [
   [
-    { word: 'A', accent: false },
-    { word: 'product', accent: false },
-    { word: 'manager', accent: false },
-    { word: 'for', accent: false },
+    { word: 'I', accent: false },
+    { word: 'build', accent: false },
+    { word: 'products', accent: false },
+    { word: 'where', accent: false },
   ],
   [
-    { word: 'Web3,', accent: true },
-    { word: 'AI,', accent: true },
+    { word: 'money', accent: true },
+    { word: 'moves', accent: true },
     { word: 'and', accent: false },
   ],
   [
-    { word: 'Fintech.', accent: true },
+    { word: 'machines', accent: true },
+    { word: 'decide.', accent: true },
   ],
 ];
 
@@ -70,7 +71,7 @@ const HeroSection = () => {
           <div className="col-span-12 md:col-span-11 hero-reveal">
             <p className="eyebrow">Shivam Pandiya</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Product Manager | Web3, AI &amp; Financial Technology Products
+              Senior Product Owner · AI, FinTech &amp; Platform Products
             </p>
           </div>
         </div>
@@ -125,7 +126,7 @@ const HeroSection = () => {
               className="font-serif italic text-foreground/85 leading-snug"
               style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.875rem)' }}
             >
-              "Protocol is product. Everything else is paint."
+              "The best product call I made was the one where I shipped less."
             </span>
           </p>
           </div>
@@ -159,7 +160,7 @@ const HeroSection = () => {
             </a>
             <div className="inline-flex items-center gap-2 pl-2 md:pl-4 text-sm">
               <span className="pulse-dot" />
-              <span className="text-muted-foreground whitespace-nowrap">Open to new roles · 2026</span>
+              <span className="text-muted-foreground whitespace-nowrap">Open to senior product roles · 2026</span>
             </div>
           </div>
         </div>
