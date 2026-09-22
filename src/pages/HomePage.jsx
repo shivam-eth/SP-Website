@@ -13,8 +13,8 @@ import OutsideSection from '../components/home/OutsideSection';
 
 const navItems = [
   { href: '#featured-work', label: 'Work' },
-  { href: '#ai', label: 'AI' },
   { href: '#about', label: 'How' },
+  { href: '#ai', label: 'AI' },
   // { href: '#experience', label: 'Track' },
   { href: '#now', label: 'Now' },
   { href: '#outside', label: 'Life' },
@@ -123,8 +123,8 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <FeaturedWorkSection />
-        <AISection />
         <AboutSection />
+        <AISection />
         {/* <ExperienceSection /> */}
         <NowSection />
         <OutsideSection />
@@ -135,12 +135,13 @@ const HomePage = () => {
             <div className="grid grid-cols-12 gap-6">
               <p className="eyebrow col-span-12 md:col-span-2">Contact</p>
               <div className="col-span-12 md:col-span-9 md:col-start-3">
-                <h2 className="display-xl text-foreground max-w-[18ch]">
-                  Open to roles where the <em className="serif text-accent">protocol layer</em> matters.
+                <h2 className="display-xl text-foreground max-w-[20ch]">
+                  Open to roles where the hard part is the <em className="serif text-accent">product</em>, not the pitch.
                 </h2>
                 <p className="mt-8 text-muted-foreground max-w-[52ch] text-lg leading-relaxed">
-                  Mainnet-stage Layer-1s, infra teams, on-chain consumer products.
-                  Permanent or contract. Remote, hybrid, or relocate for the right team.
+                  Product and platform roles across AI, fintech, and infrastructure.
+                  Enterprise products with real users and real constraints. Permanent
+                  or contract. Remote, hybrid, or relocate for the right team.
                 </p>
                 <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-base">
                   <a href="mailto:shivampan98@gmail.com" className="accent-link">
@@ -173,7 +174,7 @@ const HomePage = () => {
           <div className="container-edge flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs font-mono text-muted-foreground uppercase tracking-wider">
             <div className="flex items-center gap-3">
               <span className="pulse-dot" />
-              <span>Shivam Pandiya — © {new Date().getFullYear()}</span>
+              <span>Shivam Pandiya · © {new Date().getFullYear()}</span>
             </div>
             <span>Last updated · {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
           </div>

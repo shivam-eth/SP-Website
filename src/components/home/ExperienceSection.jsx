@@ -9,25 +9,25 @@ const experiences = [
     role: 'Product Manager',
     company: 'Antier Solutions',
     companyLink: 'https://www.antiersolutions.com/',
-    period: 'Jun 2021 — Present',
+    period: 'Jun 2021 - Present',
     location: 'Chandigarh, IN',
     body:
-      'Lead PM across 12 PMs and POs, aligning 120+ contributors over protocol, backend, DevOps, and wallet teams. 50+ products for 25+ clients, initiatives up to $1.5M. Launched Instanodes (82 protocol customers) and led Blockmaze RWA strategy.',
+      'Own product vision, roadmap, and backlog across three concurrent products, working alongside 12 product managers and owners and 80+ contributors across protocol, backend, DevOps, QA, and wallet teams. Launched Instanodes, now at 82 enterprise customers, and led Blockmaze RWA strategy.',
   },
   {
     role: 'Product Owner',
     company: '5irechain',
     companyLink: 'https://5ire.org',
-    period: 'Oct 2022 — Mar 2025',
+    period: 'Oct 2022 - Mar 2025',
     location: 'Remote',
     body:
-      'Launched a Layer-1 that processed 10M+ transactions in its first month — reaching 53K+ wallets, 250 validators, and $250M+ TVL. Owned staking, governance, bridge, wallets, and developer tools.',
+      'Led development and launch of a Rust-based Layer-1. The first month recorded 10M+ transactions across validator operations, ecosystem partners, developer testing, and campaign activity. Owned staking, governance, bridge, wallets, and developer tools.',
   },
   {
     role: 'Research Analyst',
     company: 'Sanghvi Consultancy',
     companyLink: '#',
-    period: 'Oct 2020 — Mar 2021',
+    period: 'Oct 2020 - Mar 2021',
     location: 'Ahmedabad, IN',
     body:
       'Early-career analyst role. Automated client workflows in Excel and lifted site engagement through SEO and social experiments.',

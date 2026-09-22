@@ -5,18 +5,15 @@ import HeroGrid from './HeroGrid';
 
 const HEADLINE_LINES = [
   [
-    { word: 'A', accent: false },
-    { word: 'product', accent: false },
-    { word: 'manager', accent: false },
+    { word: 'I', accent: false },
+    { word: 'build', accent: false },
     { word: 'for', accent: false },
+    { word: 'the', accent: false },
+    { word: 'moment', accent: false },
   ],
   [
-    { word: 'Web3,', accent: true },
-    { word: 'AI,', accent: true },
-    { word: 'and', accent: false },
-  ],
-  [
-    { word: 'Fintech.', accent: true },
+    { word: 'it', accent: true },
+    { word: 'breaks.', accent: true },
   ],
 ];
 
@@ -70,7 +67,7 @@ const HeroSection = () => {
           <div className="col-span-12 md:col-span-11 hero-reveal">
             <p className="eyebrow">Shivam Pandiya</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Product Manager | Web3, AI &amp; Financial Technology Products
+              Senior Product Owner · AI, FinTech &amp; Platform Products
             </p>
           </div>
         </div>
@@ -125,7 +122,7 @@ const HeroSection = () => {
               className="font-serif italic text-foreground/85 leading-snug"
               style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.875rem)' }}
             >
-              "Protocol is product. Everything else is paint."
+              "The best product call I made was the one where I shipped less."
             </span>
           </p>
           </div>
@@ -134,7 +131,7 @@ const HeroSection = () => {
 
       {/* Bottom meta row */}
       <div className="container-edge pb-16 md:pb-24 grid grid-cols-12 gap-6 md:gap-10 items-end relative z-10">
-        <div className="col-span-12 md:col-span-5 hero-reveal">
+        <div className="col-span-12 lg:col-span-5 hero-reveal">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-3">
             <Link
               to="/resume"
@@ -159,31 +156,37 @@ const HeroSection = () => {
             </a>
             <div className="inline-flex items-center gap-2 pl-2 md:pl-4 text-sm">
               <span className="pulse-dot" />
-              <span className="text-muted-foreground whitespace-nowrap">Open to new roles · 2026</span>
+              <span className="text-muted-foreground whitespace-nowrap">Open to senior product roles · 2026</span>
             </div>
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-7 hero-reveal">
-          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-l border-[var(--hairline)]">
+        <div className="col-span-12 lg:col-span-7 hero-reveal">
+          <div className="grid grid-cols-2 xl:grid-cols-4 border-t border-l border-[var(--hairline)]">
             {[
-              { n: '5', suffix: 'yrs', label: 'Shipping Web3' },
-              { n: '50', suffix: '+', label: 'Products shipped' },
-              { n: '$250M', suffix: '+', label: 'TVL on launched L1' },
-              { n: '3', suffix: '', label: 'GenAI Products', noCaps: true },
+              { n: '6', suffix: 'yrs', label: 'Building product' },
+              { n: '82', suffix: '', label: 'Enterprise customers' },
+              { n: '600-700M', suffix: '', label: 'API requests a day', compact: true },
+              { n: '$250K', suffix: '+', label: 'Quarterly recurring revenue' },
             ].map((m) => (
               <div key={m.label} className="border-r border-b border-[var(--hairline)] px-4 md:px-5 py-5 md:py-6">
-                <p className="leading-none flex items-baseline gap-1">
-                  <span className="font-serif italic text-accent text-4xl md:text-5xl">
+                <p className="leading-none flex items-baseline gap-1 whitespace-nowrap">
+                  <span
+                    className={`font-serif italic text-accent ${
+                      m.compact
+                        ? 'text-[1.6rem] md:text-[2rem]'
+                        : 'text-[2rem] md:text-4xl 2xl:text-5xl'
+                    }`}
+                  >
                     {m.n}
                   </span>
                   {m.suffix && (
-                    <span className="font-serif italic text-accent text-2xl md:text-3xl">
+                    <span className="font-serif italic text-accent text-xl md:text-2xl 2xl:text-3xl">
                       {m.suffix}
                     </span>
                   )}
                 </p>
-                <p className={`mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] ${m.noCaps ? 'normal-case' : 'uppercase'} tracking-[0.14em] text-foreground/65 leading-snug`}>
+                <p className="mt-3 md:mt-4 font-mono text-[11px] md:text-[13px] uppercase tracking-[0.14em] text-foreground/65 leading-snug">
                   {m.label}
                 </p>
               </div>

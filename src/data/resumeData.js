@@ -1,4 +1,4 @@
-export const summary = "Product manager focused on the protocol layer, with 5+ years and 50+ products across Web3 infrastructure, Layer-1 launches, RWA tokenization, and digital-asset platforms. Owned product for infrastructure supporting 82 protocol customers, and shipped a Layer-1 ecosystem that reached 53K+ wallets, 250 validators, and $250M+ TVL. I work closest to protocol and security teams (audit-gated releases with CertiK and Hacken), launched Instanodes — a multi-chain infra platform across 50+ networks — and led Blockmaze's RWA tokenization strategy. AI is part of how I ship: autonomous n8n/Notion agents, LLM evaluation (GPT, Claude, Grok, Llama, Bedrock), and Claude Code-assisted delivery — used when it earns its place.";
+export const summary = "Product owner with six years building across GenAI, fintech, and platform infrastructure. I took Instanodes from zero to 82 enterprise customers, running 600 to 700 million API requests a day at 99.95% uptime, with premium tiers contributing over $250K in quarterly recurring revenue. I make the API design calls myself, maintain the Swagger documentation customers integrate against, and build with Claude Code and Codex rather than waiting on engineering capacity. Payments work spans gateways, Stripe, invoicing, and Circle's CCTP for native USDC transfer. On the AI side I evaluate models on quality, safety and cost, then define what the model decides alone and where a person reviews.";
 
 export const experiences = [
   {
@@ -7,14 +7,18 @@ export const experiences = [
     duration: "Jun '21 - Present",
     location: "Chandigarh, IN",
     achievements: [
-      "Led product strategy and delivery for 50+ products across Web3 infrastructure, digital assets, tokenization, trading, AI applications, and enterprise software. Acted as Lead PM across a team of 12 PMs/POs, aligning 120+ contributors over protocol, backend, DevOps, QA, and wallet teams.",
-      "Managed engagements for 25+ clients and contributed to blockchain initiatives valued up to $1.5M, while running an active portfolio of 3 concurrent products.",
-      "Launched Instanodes, a multi-chain infrastructure platform (RPC, Node-/Validator-/Rollup-as-a-Service, appchains, dedicated infra) across 50+ networks; defined strategy, roadmap, PRDs, pricing, and packaging, reaching 82 protocol customers.",
+      "Own product vision, roadmap and backlog across three concurrent products, working alongside 12 product managers and owners and 80+ contributors across protocol, backend, DevOps, QA and wallet teams.",
+      "Managed engagements for 25+ clients and contributed to blockchain initiatives valued up to $1.5M.",
+      "Launched Instanodes, a multi-chain infrastructure platform (RPC, Node-/Validator-/Rollup-as-a-Service, appchains, dedicated infra) across 50+ networks. Defined strategy, roadmap, PRDs, pricing and packaging, reaching 82 enterprise customers at 600 to 700 million API requests a day on 99.95% uptime.",
       "Introduced Dedicated Clusters and one-click private blockchain deployment, contributing $250K+ in quarterly recurring revenue from active infrastructure contracts.",
-      "Led product strategy for Blockmaze, a Layer-0 RWA tokenization ecosystem (gold, bonds, equities) — defining DAO governance, issuer/investor onboarding, and KYC/KYB across India, UAE, and US markets.",
+      "Led product strategy for Blockmaze, a Layer-0 RWA tokenization ecosystem (gold, bonds, equities), defining DAO governance, issuer/investor onboarding, and KYC/KYB across India, UAE, and US markets.",
       "Worked on tokenomics models and TGE planning with partner ecosystems, and collaborated with UX/research teams on simplified flows for trading, liquidity, and collateral operations.",
       "Collaborated with security teams to integrate audit partners (CertiK, Hacken) into milestones, across Cosmos SDK, Substrate, Hyperledger, and Corda architectures.",
-      "Applied AI-assisted workflows across discovery, research, documentation, and prototyping — building autonomous n8n/Notion agents that auto-generated 350+ client proposals and cut documentation cycles from days to hours.",
+      "Applied AI-assisted workflows across discovery, research, documentation, and prototyping, building autonomous n8n/Notion agents that auto-generated 350+ client proposals and cut documentation cycles from days to hours.",
+      "Delivered payment products including payment gateway and Stripe integrations, invoicing flows, and crypto payment solutions.",
+      "Integrated Circle's Cross-Chain Transfer Protocol for native USDC transfer across chains.",
+      "Designed a points-based trading competition to solve thin order-book liquidity on a client exchange, producing $1.1M in trading volume and 1,000 to 1,500 active users in three months.",
+      "Make the API design calls on endpoints, schemas, authentication and error handling, and maintain the Swagger documentation and Postman collections customers integrate against.",
       "Implemented feature flagging and CI/CD pipelines to increase deployment frequency from bi-weekly to daily."
     ]
   },
@@ -25,7 +29,7 @@ export const experiences = [
     location: "Remote",
     achievements: [
       "Managed backlog and delivery for ecosystem products: staking, governance, bridge, wallets, and developer tools. Breaking down multi-month epics into clear, testable user stories.",
-      "Led the development & launch of the Layer-1 blockchain, achieving 10M+ transactions in the first month and reaching 53K+ mainnet wallets, 250 validators, and $250M+ TVL on a Rust-based chain architecture.",
+      "Led development and launch of a Rust-based Layer-1. The first month recorded 10M+ transactions across validator operations, ecosystem partners, developer testing and campaign activity, which shaped how I now define retention and cohort measures before a launch rather than after it.",
       "Contributed to cross-chain architecture discussions and designed UX flows for bridging/staking that simplified complex protocol operations for retail users.",
       "Represented product during ecosystem demo calls, investor sessions, and developer onboarding walkthroughs.",
       "Improved sprint velocity (~20%) by providing clear acceptance criteria, refining stories, and aligning on definition of done."
@@ -50,7 +54,7 @@ export const projects = [
     description: "Multi-chain Web3 Infrastructure Platform",
     features: [
       "Launched a multi-chain infrastructure platform: RPC, Node-/Validator-/Rollup-as-a-Service, appchains, and dedicated infrastructure across 50+ networks.",
-      "Defined product strategy, roadmap, PRDs, pricing research, and service packaging, reaching 82 protocol customers including exchanges, wallets, and dApps.",
+      "Defined product strategy, roadmap, PRDs, pricing research, and service packaging, reaching 82 enterprise customers including exchanges, wallets, and dApps.",
       "Introduced Dedicated Clusters and one-click private chain deployment, contributing $250K+ in quarterly recurring revenue."
     ],
     link: "https://www.instanodes.io/"
@@ -59,7 +63,7 @@ export const projects = [
     name: "Blockmaze",
     description: "Layer-0 RWA Tokenization Ecosystem",
     features: [
-      "Led product strategy and platform design for governance-driven tokenization of real-world assets — gold, bonds, and equities.",
+      "Led product strategy and platform design for governance-driven tokenization of real-world assets: gold, bonds, and equities.",
       "Designed issuer onboarding, investor onboarding, DAO governance, KYC/KYB verification, and asset issuance workflows across India, UAE, and US markets.",
       "Partnered with legal and compliance stakeholders to define scalable frameworks for retail and institutional participants."
     ],
@@ -79,7 +83,7 @@ export const projects = [
     name: "Vuelo",
     description: "GenAIPowered Healthcare Assistant (AI + HealthTech)",
     features: [
-      "Gathered & refined requirements with external & internal stakeholders; prepared FRDs, flows, and sprint plans.",
+      "Gathered and refined requirements with external and internal stakeholders, then prepared FRDs, flows, and sprint plans.",
       "Evaluated multiple AI model options and fine-tuned LLMs with curated medical context to reduce hallucinations and improve reliability.",
       "Designed conversational UX, safe-response patterns, and fallback logic to handle sensitive health topics responsibly."
     ],
@@ -115,7 +119,7 @@ export const projects = [
 export const portfolioItems = [
   {
     title: "Instanodes",
-    description: "Multi-chain Web3 infrastructure platform — RPC, Node-/Validator-/Rollup-as-a-Service, appchains, and dedicated infra across 50+ networks. Reached 82 protocol customers and $250K+ quarterly recurring revenue.",
+    description: "Multi-chain Web3 infrastructure platform: RPC, Node-/Validator-/Rollup-as-a-Service, appchains, and dedicated infra across 50+ networks. Reached 82 enterprise customers and $250K+ quarterly recurring revenue.",
     techStack: ["RPC", "Node-as-a-Service", "Infrastructure"],
     link: "https://www.instanodes.io/"
   },
@@ -174,21 +178,15 @@ export const skills = [
 
 export const education = [
   {
+    degree: "MBA, Business Analytics",
+    institution: "Narsee Monjee Institute of Management Studies (NMIMS)",
+    year: "2026 - 2028",
+    location: "In progress"
+  },
+  {
     degree: "Bcom. Honors Entrepreneurship",
-    institution: "Global Centre For Entrepreneurship & Commerce",
+    institution: "Vivekananda Global University (Global Centre for Entrepreneurship & Commerce)",
     year: "Mar '17 - Apr '20",
-    location: "Jaipur, IN"
-  },
-  {
-    degree: "12th (Senior Secondary)",
-    institution: "Subodh Public School",
-    year: "Mar '15 - Apr '16",
-    location: "Jaipur, IN"
-  },
-  {
-    degree: "10th (Secondary)",
-    institution: "Subodh Public School",
-    year: "Mar '14 - Apr '15",
     location: "Jaipur, IN"
   }
 ];

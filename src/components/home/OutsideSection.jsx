@@ -2,18 +2,18 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import cyclingImage from '../../assets/photo_2025-06-0718.12.07.jpeg';
-import trekkingImage from '../../assets/photo_2025-06-0718.11.49.jpeg';
-import readingImage from '../../assets/photo_2025-06-0718.12.04.jpeg';
-import runningImage from '../../assets/marathon-tuffman-2024.jpeg';
-import footballImage from '../../assets/football.png';
+import cyclingImage from '../../assets/photo_2025-06-0718.12.07.webp';
+import trekkingImage from '../../assets/photo_2025-06-0718.11.49.webp';
+import readingImage from '../../assets/photo_2025-06-0718.12.04.webp';
+import runningImage from '../../assets/marathon-tuffman-2024.webp';
+import footballImage from '../../assets/football.webp';
 
-import gallery1 from '../../assets/photo_2025-06-0718.12.06.jpeg';
-import gallery2 from '../../assets/photo_2025-06-0718.12.03.jpeg';
-import gallery3 from '../../assets/photo_2025-06-0718.11.58.jpeg';
-import gallery4 from '../../assets/photo_2025-06-0718.11.56.jpeg';
-import gallery5 from '../../assets/photo_2025-06-0718.11.54.jpeg';
-import gallery6 from '../../assets/puppy holding.png';
+import gallery1 from '../../assets/photo_2025-06-0718.12.06.webp';
+import gallery2 from '../../assets/photo_2025-06-0718.12.03.webp';
+import gallery3 from '../../assets/photo_2025-06-0718.11.58.webp';
+import gallery4 from '../../assets/photo_2025-06-0718.11.56.webp';
+import gallery5 from '../../assets/photo_2025-06-0718.11.54.webp';
+import gallery6 from '../../assets/puppy-holding.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +21,7 @@ const activities = [
   {
     n: 'i.',
     label: 'Cycling',
-    stat: '50km+',
+    stat: '100km+',
     unit: 'monthly',
     body: 'Long routes through hill country. Most product clarity arrives mid-ride, two hours in, no inbox.',
     image: cyclingImage,
@@ -33,7 +33,7 @@ const activities = [
     label: 'Trekking',
     stat: '15+',
     unit: 'peaks',
-    body: 'Hidden trails over marked ones. Elevation forces a longer time horizon — useful when roadmaps feel cramped.',
+    body: 'Hidden trails over marked ones. Elevation forces a longer time horizon, useful when roadmaps feel cramped.',
     image: trekkingImage,
     alt: 'On a ridge, mid-trek',
     caption: 'Himachal · ridge line',
@@ -41,7 +41,7 @@ const activities = [
   {
     n: 'iii.',
     label: 'Marathons',
-    stat: '12+',
+    stat: '10+',
     unit: 'finished',
     body: 'Endurance is a quieter skill than it looks. Pacing a 42k is closer to shipping a mainnet than to a sprint.',
     image: runningImage,
@@ -133,7 +133,7 @@ const OutsideSection = () => {
             </h2>
             <p className="mt-8 text-muted-foreground max-w-[58ch] text-lg leading-relaxed outside-line">
               The parts of the week that don't sit on a Linear board. They shape how I think about pacing,
-              coordination, and what's actually worth pushing through — long rides, long trails, long runs.
+              coordination, and what's actually worth pushing through. Long rides, long trails, long runs.
             </p>
           </div>
         </div>
@@ -203,7 +203,7 @@ const OutsideSection = () => {
             <p className="col-span-12 md:col-span-6 md:col-start-4 text-muted-foreground text-base md:text-lg leading-relaxed max-w-[52ch] outside-line">
               A contact sheet from the last few months. Trails, race mornings, side projects on Sundays.
             </p>
-            <p className="hidden md:block col-span-3 text-right eyebrow text-muted-foreground/70 outside-line">
+            <p className="hidden md:block col-span-3 text-right eyebrow text-muted-foreground/90 outside-line">
               06 frames
             </p>
           </div>
@@ -225,7 +225,7 @@ const OutsideSection = () => {
                 </div>
                 <figcaption className="mt-3 flex items-baseline justify-between font-mono text-[12px] md:text-[13px] uppercase tracking-[0.12em] text-foreground/60">
                   <span>{f.tag}</span>
-                  <span className="text-muted-foreground/50">2025</span>
+                  <span className="text-muted-foreground/90">2025</span>
                 </figcaption>
               </figure>
             ))}

@@ -10,7 +10,8 @@ const alsoProjects = [
   {
     name: '5irechain',
     emphasis: 'Layer-1 · mainnet',
-    body: 'Owned staking, governance, bridge, and wallets. Mainnet hit 10M+ transactions month one — 53K+ wallets, 250 validators, $250M+ TVL.',
+    body:
+      'Owned staking, governance, bridge, and wallets from testnet to mainnet. The launch recorded 10M+ transactions across validator operations, ecosystem partners, and campaign activity. It taught me to define retention before launch, not read headline counts after it.',
     link: 'https://5ire.org',
   },
   {
@@ -25,6 +26,12 @@ const alsoProjects = [
     body: 'Reworked onboarding and mining UX. v2 shipped with ~35% lift in app installs.',
     link: 'https://blockdag.network/',
   },
+  {
+    name: 'Payments & Stablecoins',
+    emphasis: 'Gateways · Stripe · USDC',
+    body:
+      "Payment gateway and Stripe integrations, invoicing flows, and crypto payment rails. Integrated Circle's CCTP for native USDC transfer across chains.",
+  },
 ];
 
 const projects = [
@@ -33,9 +40,9 @@ const projects = [
     name: 'Instanodes',
     emphasis: 'Infra',
     role: 'Product Manager',
-    year: '2024 — Now',
+    year: '2024 - Now',
     outcome:
-      'Launched a multi-chain infrastructure platform — RPC, Node-, Validator-, and Rollup-as-a-Service plus dedicated infra across 50+ networks. Adopted by 82 protocol customers; Dedicated Clusters and one-click private chains drove $250K+ in quarterly recurring revenue.',
+      'A multi-chain infrastructure platform I took from zero: RPC, Node-, Validator- and Rollup-as-a-Service across 50+ networks. It now serves 82 enterprise customers at 600 to 700 million API requests a day, holding 99.95% uptime. Dedicated Clusters and one-click private chains added $250K+ in quarterly recurring revenue.',
     tags: ['RPC', 'NaaS / VaaS', 'Infra'],
     link: 'https://www.instanodes.io/',
   },
@@ -46,7 +53,7 @@ const projects = [
     role: 'Product Manager',
     year: '2024',
     outcome:
-      'Governance-driven tokenization of real-world assets — gold, bonds, equities. Designed issuer and investor onboarding, DAO governance, and KYC/KYB verification across India, UAE, and US markets.',
+      'Governance-driven tokenization of real-world assets: gold, bonds, and equities. Designed issuer and investor onboarding, DAO governance, and KYC/KYB verification across India, UAE, and US markets.',
     tags: ['RWA', 'Tokenization', 'Governance'],
     link: 'https://blockmaze.org/',
   },
@@ -57,7 +64,7 @@ const projects = [
     role: 'Product Manager',
     year: '2024',
     outcome:
-      'Led product for a GenAI healthcare assistant. Evaluated GPT, Claude, Grok, Llama, and Bedrock, then designed conversational UX, guardrails, escalation, and safe-response flows for sensitive health topics.',
+      'Led product for a GenAI healthcare assistant. Evaluated GPT, Claude, Grok, Llama and Bedrock, then defined what the model answers alone, where a clinician reviews, and how it behaves when it is unsure. Shipped two capabilities first instead of the full scope, and let clinicians decide what came next.',
     tags: ['GenAI', 'LLM eval', 'Healthcare'],
     link: '#',
   },
@@ -132,18 +139,17 @@ const FeaturedWorkSection = () => {
     <section id="featured-work" ref={rootRef} className="relative py-14 md:py-20">
       <div className="container-edge">
         {/* Header */}
-        <div className="work-header grid grid-cols-12 gap-6 mb-16 md:mb-24">
-          <p className="eyebrow col-span-12 md:col-span-2">Selected</p>
-          <div className="col-span-12 md:col-span-7">
+        <div className="work-header grid grid-cols-12 gap-6 mb-16 md:mb-24 items-end">
+          <p className="hidden md:block eyebrow col-span-3">2021 - Now</p>
+          <div className="col-span-12 md:col-span-9 md:text-right">
             <h2 className="display-lg text-foreground">
               Work that <em className="serif text-accent">shipped</em>.
             </h2>
-            <p className="mt-5 text-muted-foreground max-w-[52ch] text-base md:text-lg">
-              Five products, all in production. Selected for what they taught me about
-              protocol-layer trade-offs, not for their headline numbers.
+            <p className="mt-5 text-muted-foreground max-w-[52ch] text-base md:text-lg md:ml-auto">
+              Five products, all in production. Chosen for the decisions behind them
+              rather than the numbers on top of them.
             </p>
           </div>
-          <p className="hidden md:block eyebrow col-span-3 md:text-right">2021 — Now</p>
         </div>
 
         {/* Rows */}
@@ -158,14 +164,17 @@ const FeaturedWorkSection = () => {
                 className="group block py-10 md:py-12 border-b border-[var(--hairline)] hover:bg-[rgba(255,255,255,0.015)] transition-colors duration-300"
               >
                 <div className="grid grid-cols-12 gap-6 items-start">
-                  <span className="col-span-2 md:col-span-1 font-mono text-[13px] text-foreground/60 pt-2">
-                    {p.n}
-                  </span>
+                  <div className="col-span-12 md:col-span-6 flex items-start gap-3 md:gap-4">
+                    <span className="font-mono text-[13px] text-foreground/60 pt-2 shrink-0">
+                      {p.n}
+                    </span>
 
-                  <div className="col-span-10 md:col-span-5">
+                    <div className="min-w-0">
                     <h3 className="display-lg leading-none text-foreground">
                       {p.name}
-                      <span className="ml-3 font-serif italic text-muted-foreground text-[0.55em] align-middle whitespace-nowrap">
+                      {/* Sits beside the name from md up; drops to its own line on
+                          narrow phones, where nowrap would push the page wider. */}
+                      <span className="mt-1 block font-serif italic text-muted-foreground text-[0.55em] whitespace-nowrap md:mt-0 md:ml-3 md:inline md:align-middle">
                         {p.emphasis}
                       </span>
                     </h3>
@@ -176,6 +185,7 @@ const FeaturedWorkSection = () => {
                           {t}
                         </span>
                       ))}
+                    </div>
                     </div>
                   </div>
 
@@ -200,30 +210,33 @@ const FeaturedWorkSection = () => {
         {/* Also — secondary project highlights */}
         <div className="mt-10 md:mt-14">
           <div className="hairline mb-8 md:mb-10" />
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
-            <p className="eyebrow col-span-12 md:col-span-2">Also</p>
-            <ul className="col-span-12 md:col-span-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-              {alsoProjects.map((p) => (
-                <li key={p.name} className="work-row">
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block"
-                  >
-                    <h4 className="text-foreground text-xl md:text-2xl tracking-tight flex items-baseline gap-2 group-hover:text-accent transition-colors duration-200">
-                      {p.name}
-                      <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    </h4>
-                    <p className="mt-2 font-mono text-[12.5px] md:text-[13px] uppercase tracking-[0.12em] text-foreground/65">
-                      {p.emphasis}
-                    </p>
-                    <p className="mt-4 text-foreground/75 leading-relaxed text-[15px] md:text-base max-w-[42ch]">
-                      {p.body}
-                    </p>
-                  </a>
-                </li>
-              ))}
+          <div className="grid grid-cols-12 gap-4 md:gap-5">
+            <p className="eyebrow col-span-12 md:col-span-1">Also</p>
+            <ul className="col-span-12 md:col-span-11 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-12">
+              {alsoProjects.map((p) => {
+                const Wrapper = p.link ? 'a' : 'div';
+                const wrapperProps = p.link
+                  ? { href: p.link, target: '_blank', rel: 'noopener noreferrer' }
+                  : {};
+                return (
+                  <li key={p.name} className="work-row">
+                    <Wrapper {...wrapperProps} className="group block">
+                      <h4 className="text-foreground text-xl md:text-2xl tracking-tight flex items-baseline gap-2 group-hover:text-accent transition-colors duration-200">
+                        {p.name}
+                        {p.link && (
+                          <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        )}
+                      </h4>
+                      <p className="mt-2 font-mono text-[12.5px] md:text-[13px] uppercase tracking-[0.12em] text-foreground/65">
+                        {p.emphasis}
+                      </p>
+                      <p className="mt-4 text-foreground/75 leading-relaxed text-[15px] md:text-base max-w-[42ch]">
+                        {p.body}
+                      </p>
+                    </Wrapper>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -232,7 +245,7 @@ const FeaturedWorkSection = () => {
         <div className="mt-24 md:mt-32">
           <div className="flex items-center justify-between mb-6">
             <p className="eyebrow">Stack & collaborators</p>
-            <p className="eyebrow text-muted-foreground/60">passing through</p>
+            <p className="eyebrow text-muted-foreground/90">passing through</p>
           </div>
           <div className="hairline" />
           <div className="overflow-hidden py-8">
@@ -240,7 +253,7 @@ const FeaturedWorkSection = () => {
               {[...protocols, ...protocols].map((p, i) => (
                 <span key={i} className="flex items-center gap-16">
                   <span>{p}</span>
-                  <span className="text-muted-foreground/30">/</span>
+                  <span aria-hidden className="text-muted-foreground/30">/</span>
                 </span>
               ))}
             </div>
@@ -250,7 +263,7 @@ const FeaturedWorkSection = () => {
           {/* Quiet CTA strip */}
           <div className="mt-10 md:mt-12 grid grid-cols-12 gap-6 items-baseline">
             <p className="col-span-12 md:col-span-6 text-muted-foreground text-base md:text-lg leading-relaxed max-w-[44ch]">
-              Want the longer version — companies, scope, outcomes by year?
+              Want the longer version? Companies, scope, outcomes by year.
             </p>
             <div className="col-span-12 md:col-span-6 md:text-right flex md:justify-end gap-6 text-sm">
               <Link

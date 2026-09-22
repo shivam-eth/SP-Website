@@ -11,7 +11,8 @@ const now = [
   },
   {
     label: 'Building',
-    body: 'Agent-to-agent payment gateway rails for the agentic economy. AgenticRPC underneath, powering autonomous payments between agents.',
+    body:
+      'Agent-to-agent payment rails for the agentic economy, built on x402. AgenticRPC turns Instanodes RPC into an endpoint an AI agent can pay for per task, in crypto, with no API key and no subscription provisioned in advance. Early, and the hard part is not the payment. It is deciding what an agent is allowed to spend without asking.',
   },
   {
     label: 'Thinking about',
@@ -55,7 +56,7 @@ const NowSection = () => {
               What I'm <em className="serif text-accent">on</em>, this season.
             </h2>
           </div>
-          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/70 now-row">
+          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/90 now-row">
             Updated · {updated}
           </p>
         </div>
