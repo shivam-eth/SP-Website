@@ -179,7 +179,7 @@ const ResumePage = () => {
             <header className="r-block mb-20">
               <p className="eyebrow mb-6">Curriculum vitae · 2026</p>
               <h1 className="display-xl text-foreground">
-                Shivam <em className="serif text-accent">Pandiya</em>.
+                Shivam Pandiya.
               </h1>
               <p className="mt-6 text-muted-foreground max-w-[56ch]">
                 Senior Product Owner · AI, FinTech &amp; Platform Products · Chandigarh, IN

@@ -7,13 +7,14 @@ const HEADLINE_LINES = [
   [
     { word: 'I', accent: false },
     { word: 'build', accent: false },
-    { word: 'for', accent: false },
-    { word: 'the', accent: false },
-    { word: 'moment', accent: false },
+    { word: "what's", accent: false },
+    { word: 'next', accent: false },
   ],
   [
-    { word: 'it', accent: true },
-    { word: 'breaks.', accent: true },
+    { word: 'before', accent: false },
+    { word: 'it', accent: false },
+    { word: 'becomes', accent: true },
+    { word: 'obvious.', accent: true },
   ],
 ];
 
@@ -155,7 +156,6 @@ const HeroSection = () => {
               LinkedIn <span aria-hidden>↗</span>
             </a>
             <div className="inline-flex items-center gap-2 pl-2 md:pl-4 text-sm">
-              <span className="pulse-dot" />
               <span className="text-muted-foreground whitespace-nowrap">Open to senior product roles · 2026</span>
             </div>
           </div>

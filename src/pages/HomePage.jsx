@@ -133,7 +133,6 @@ const HomePage = () => {
         <section id="contact" className="relative py-16 md:py-24">
           <div className="container-edge">
             <div className="grid grid-cols-12 gap-6">
-              <p className="eyebrow col-span-12 md:col-span-2">Contact</p>
               <div className="col-span-12 md:col-span-9 md:col-start-3">
                 <h2 className="display-xl text-foreground max-w-[20ch]">
                   Open to roles where the hard part is the <em className="serif text-accent">product</em>, not the pitch.
@@ -173,7 +172,6 @@ const HomePage = () => {
         <footer className="border-t border-[var(--hairline)] py-10">
           <div className="container-edge flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs font-mono text-muted-foreground uppercase tracking-wider">
             <div className="flex items-center gap-3">
-              <span className="pulse-dot" />
               <span>Shivam Pandiya · © {new Date().getFullYear()}</span>
             </div>
             <span>Last updated · {new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>

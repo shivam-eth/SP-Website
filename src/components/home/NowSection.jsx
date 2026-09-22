@@ -1,9 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
+import React from 'react';
 const now = [
   {
     label: 'Reading',
@@ -21,42 +16,21 @@ const now = [
 ];
 
 const NowSection = () => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from('.now-row', {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'expo.out',
-        stagger: 0.08,
-        scrollTrigger: { trigger: ref.current, start: 'top 75%' },
-      });
-    }, ref);
-
-    return () => ctx.revert();
-  }, []);
-
   const updated = new Date().toLocaleDateString('en-US', {
     month: 'short',
     year: 'numeric',
   });
 
   return (
-    <section id="now" ref={ref} className="relative py-14 md:py-20">
+    <section id="now" className="relative py-16 md:py-24">
       <div className="container-edge">
         <div className="grid grid-cols-12 gap-6 mb-16">
-          <p className="eyebrow col-span-6 md:col-span-2 now-row">Now</p>
-          <div className="col-span-12 md:col-span-7 now-row">
+          <div className="col-span-12 md:col-span-7">
             <h2 className="display-lg text-foreground">
-              What I'm <em className="serif text-accent">on</em>, this season.
+              What I'm on, this season.
             </h2>
           </div>
-          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/90 now-row">
+          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/90">
             Updated · {updated}
           </p>
         </div>
@@ -64,7 +38,7 @@ const NowSection = () => {
         <div className="hairline" />
         <ul>
           {now.map((n) => (
-            <li key={n.label} className="now-row group">
+            <li key={n.label} className="group">
               <div className="grid grid-cols-12 gap-6 py-8 md:py-10 border-b border-[var(--hairline)] transition-colors duration-300 group-hover:bg-[rgba(255,255,255,0.015)]">
                 <p className="col-span-12 md:col-span-3 font-mono text-xs uppercase tracking-wider text-muted-foreground pt-1">
                   {n.label}
