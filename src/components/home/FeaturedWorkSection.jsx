@@ -244,7 +244,7 @@ const FeaturedWorkSection = () => {
         <div className="mt-24 md:mt-32">
           <div className="flex items-center justify-between mb-6">
             <p className="eyebrow">Stack & collaborators</p>
-            <p className="eyebrow text-muted-foreground/60">passing through</p>
+            <p className="eyebrow text-muted-foreground/90">passing through</p>
           </div>
           <div className="hairline" />
           <div className="overflow-hidden py-8">
@@ -252,7 +252,7 @@ const FeaturedWorkSection = () => {
               {[...protocols, ...protocols].map((p, i) => (
                 <span key={i} className="flex items-center gap-16">
                   <span>{p}</span>
-                  <span className="text-muted-foreground/30">/</span>
+                  <span aria-hidden className="text-muted-foreground/30">/</span>
                 </span>
               ))}
             </div>

@@ -88,7 +88,7 @@ const AISection = () => {
                 {s.task}
               </p>
               <p className="mt-5 leading-none flex items-baseline gap-3 flex-wrap">
-                <span className="font-serif italic text-muted-foreground/60 text-xl md:text-2xl line-through decoration-[var(--hairline-strong)]">
+                <span className="font-serif italic text-muted-foreground/90 text-xl md:text-2xl line-through decoration-[var(--hairline-strong)]">
                   {s.from}
                 </span>
                 <span aria-hidden className="text-muted-foreground text-lg">→</span>
@@ -130,7 +130,7 @@ const AISection = () => {
             <div className="flex flex-wrap gap-x-3 gap-y-2 font-serif italic text-foreground/85 text-xl md:text-2xl">
               {models.map((m, i) => (
                 <span key={m} className="flex items-center gap-3">
-                  {i > 0 && <span className="text-muted-foreground/40">/</span>}
+                  {i > 0 && <span aria-hidden className="text-muted-foreground/40">/</span>}
                   {m}
                 </span>
               ))}

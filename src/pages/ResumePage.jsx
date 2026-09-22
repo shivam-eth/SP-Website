@@ -282,7 +282,7 @@ const ResumePage = () => {
                         {group.category}
                       </p>
                       <span className="hairline flex-1" />
-                      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/60">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/90">
                         {String(group.items.length).padStart(2, '0')} items
                       </p>
                     </div>

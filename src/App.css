@@ -21,9 +21,9 @@
   --foreground: #ECECEE;
   --muted: #141416;
   --muted-foreground: #8B8B92;
-  --accent: #5E6AD2;
-  --accent-soft: rgba(94, 106, 210, 0.12);
-  --accent-pulse: rgba(94, 106, 210, 0.45);
+  --accent: #6671D4;
+  --accent-soft: rgba(102, 113, 212, 0.12);
+  --accent-pulse: rgba(102, 113, 212, 0.45);
 
   /* Map shadcn tokens to new palette so existing UI primitives don't break */
   --card: var(--muted);
@@ -138,6 +138,7 @@
   a, button {
     transition: color var(--d-hover) var(--ease-expo), opacity var(--d-hover) var(--ease-expo), border-color var(--d-hover) var(--ease-expo), background-color var(--d-hover) var(--ease-expo);
   }
+
 }
 
 @layer components {
@@ -255,4 +256,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+:where(a, button, [tabindex], input, select, textarea, summary):focus-visible,
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  outline-color: var(--accent);
 }

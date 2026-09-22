@@ -203,7 +203,7 @@ const OutsideSection = () => {
             <p className="col-span-12 md:col-span-6 md:col-start-4 text-muted-foreground text-base md:text-lg leading-relaxed max-w-[52ch] outside-line">
               A contact sheet from the last few months. Trails, race mornings, side projects on Sundays.
             </p>
-            <p className="hidden md:block col-span-3 text-right eyebrow text-muted-foreground/70 outside-line">
+            <p className="hidden md:block col-span-3 text-right eyebrow text-muted-foreground/90 outside-line">
               06 frames
             </p>
           </div>
@@ -225,7 +225,7 @@ const OutsideSection = () => {
                 </div>
                 <figcaption className="mt-3 flex items-baseline justify-between font-mono text-[12px] md:text-[13px] uppercase tracking-[0.12em] text-foreground/60">
                   <span>{f.tag}</span>
-                  <span className="text-muted-foreground/50">2025</span>
+                  <span className="text-muted-foreground/90">2025</span>
                 </figcaption>
               </figure>
             ))}

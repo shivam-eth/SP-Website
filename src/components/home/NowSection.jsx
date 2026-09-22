@@ -56,7 +56,7 @@ const NowSection = () => {
               What I'm <em className="serif text-accent">on</em>, this season.
             </h2>
           </div>
-          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/70 now-row">
+          <p className="col-span-6 md:col-span-3 md:text-right eyebrow text-muted-foreground/90 now-row">
             Updated · {updated}
           </p>
         </div>

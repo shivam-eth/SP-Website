@@ -77,7 +77,7 @@ const AboutSection = () => {
                     {p.body}
                   </p>
                   {p.aside && (
-                    <p className="mt-5 pl-4 border-l border-[var(--hairline-strong)] text-muted-foreground/80 leading-relaxed text-[14px] md:text-[15px] max-w-[50ch]">
+                    <p className="mt-5 pl-4 border-l border-[var(--hairline-strong)] text-muted-foreground/90 leading-relaxed text-[14px] md:text-[15px] max-w-[50ch]">
                       <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground/55">
                         What I would do differently
                       </span>
