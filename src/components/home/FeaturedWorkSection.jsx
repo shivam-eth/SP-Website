@@ -1,10 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const alsoProjects = [
   {
@@ -98,45 +94,8 @@ const protocols = [
 ];
 
 const FeaturedWorkSection = () => {
-  const rootRef = useRef(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return;
-
-    const ctx = gsap.context(() => {
-      gsap.utils.toArray('.work-row').forEach((row) => {
-        gsap.from(row, {
-          y: 24,
-          opacity: 0,
-          duration: 0.9,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: row,
-            start: 'top 85%',
-          },
-        });
-      });
-
-      gsap.from('.work-header > *', {
-        y: 18,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'expo.out',
-        stagger: 0.08,
-        scrollTrigger: {
-          trigger: '.work-header',
-          start: 'top 80%',
-        },
-      });
-    }, rootRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section id="featured-work" ref={rootRef} className="relative py-14 md:py-20">
+    <section id="featured-work" className="relative py-20 md:py-28">
       <div className="container-edge">
         {/* Header */}
         <div className="work-header grid grid-cols-12 gap-6 mb-16 md:mb-24 items-end">
@@ -156,7 +115,7 @@ const FeaturedWorkSection = () => {
         <div className="hairline" />
         <ul>
           {projects.map((p) => (
-            <li key={p.n} className="work-row">
+            <li key={p.n}>
               <a
                 href={p.link}
                 target="_blank"
@@ -219,7 +178,7 @@ const FeaturedWorkSection = () => {
                   ? { href: p.link, target: '_blank', rel: 'noopener noreferrer' }
                   : {};
                 return (
-                  <li key={p.name} className="work-row">
+                  <li key={p.name}>
                     <Wrapper {...wrapperProps} className="group block">
                       <h4 className="text-foreground text-xl md:text-2xl tracking-tight flex items-baseline gap-2 group-hover:text-accent transition-colors duration-200">
                         {p.name}
@@ -243,9 +202,8 @@ const FeaturedWorkSection = () => {
 
         {/* Marquee strip */}
         <div className="mt-24 md:mt-32">
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6">
             <p className="eyebrow">Stack & collaborators</p>
-            <p className="eyebrow text-muted-foreground/90">passing through</p>
           </div>
           <div className="hairline" />
           <div className="overflow-hidden py-8">

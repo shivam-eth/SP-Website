@@ -126,10 +126,9 @@ const OutsideSection = () => {
       <div className="container-edge">
         {/* Heading */}
         <div className="grid grid-cols-12 gap-6 mb-14 md:mb-20">
-          <p className="eyebrow col-span-12 md:col-span-2 outside-line">Life, lately</p>
           <div className="col-span-12 md:col-span-9 md:col-start-3">
             <h2 className="display-lg text-foreground max-w-[20ch] outside-line">
-              What keeps me <em className="serif text-accent">moving</em>.
+              What keeps me moving.
             </h2>
             <p className="mt-8 text-muted-foreground max-w-[58ch] text-lg leading-relaxed outside-line">
               The parts of the week that don't sit on a Linear board. They shape how I think about pacing,

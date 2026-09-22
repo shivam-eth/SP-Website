@@ -1,9 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
+import React from 'react';
 const principles = [
   {
     n: '01',
@@ -30,34 +25,12 @@ const principles = [
 ];
 
 const AboutSection = () => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from('.about-line', {
-        y: 24,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'expo.out',
-        stagger: 0.08,
-        scrollTrigger: { trigger: ref.current, start: 'top 70%' },
-      });
-    }, ref);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section id="about" ref={ref} className="relative py-14 md:py-20">
+    <section id="about" className="relative py-24 md:py-36">
       <div className="container-edge">
         <div className="grid grid-cols-12 gap-6">
-          <p className="eyebrow col-span-12 md:col-span-2 about-line">How I work</p>
-
           <div className="col-span-12 md:col-span-9 md:col-start-3">
-            <h2 className="display-lg text-foreground max-w-[16ch] about-line">
+            <h2 className="display-lg text-foreground max-w-[16ch]">
               Four calls I'd <em className="serif text-accent">make again</em>.
             </h2>
 
@@ -65,7 +38,7 @@ const AboutSection = () => {
                 one-line principles, and they need the measure to stay readable. */}
             <ol className="mt-16 md:mt-20 grid md:grid-cols-2 gap-12 md:gap-x-14 md:gap-y-16">
               {principles.map((p) => (
-                <li key={p.n} className="about-line">
+                <li key={p.n}>
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-serif italic text-accent text-xl">{p.n}</span>
                     <span className="hairline flex-1" />
