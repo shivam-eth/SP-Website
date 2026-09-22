@@ -13,8 +13,8 @@ import OutsideSection from '../components/home/OutsideSection';
 
 const navItems = [
   { href: '#featured-work', label: 'Work' },
-  { href: '#ai', label: 'AI' },
   { href: '#about', label: 'How' },
+  { href: '#ai', label: 'AI' },
   // { href: '#experience', label: 'Track' },
   { href: '#now', label: 'Now' },
   { href: '#outside', label: 'Life' },
@@ -123,8 +123,8 @@ const HomePage = () => {
       <main>
         <HeroSection />
         <FeaturedWorkSection />
-        <AISection />
         <AboutSection />
+        <AISection />
         {/* <ExperienceSection /> */}
         <NowSection />
         <OutsideSection />

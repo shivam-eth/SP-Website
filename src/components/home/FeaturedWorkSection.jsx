@@ -139,18 +139,17 @@ const FeaturedWorkSection = () => {
     <section id="featured-work" ref={rootRef} className="relative py-14 md:py-20">
       <div className="container-edge">
         {/* Header */}
-        <div className="work-header grid grid-cols-12 gap-6 mb-16 md:mb-24">
-          <p className="eyebrow col-span-12 md:col-span-2">Selected</p>
-          <div className="col-span-12 md:col-span-7">
+        <div className="work-header grid grid-cols-12 gap-6 mb-16 md:mb-24 items-end">
+          <p className="hidden md:block eyebrow col-span-3">2021 - Now</p>
+          <div className="col-span-12 md:col-span-9 md:text-right">
             <h2 className="display-lg text-foreground">
               Work that <em className="serif text-accent">shipped</em>.
             </h2>
-            <p className="mt-5 text-muted-foreground max-w-[52ch] text-base md:text-lg">
+            <p className="mt-5 text-muted-foreground max-w-[52ch] text-base md:text-lg md:ml-auto">
               Five products, all in production. Chosen for the decisions behind them
               rather than the numbers on top of them.
             </p>
           </div>
-          <p className="hidden md:block eyebrow col-span-3 md:text-right">2021 - Now</p>
         </div>
 
         {/* Rows */}
@@ -165,11 +164,12 @@ const FeaturedWorkSection = () => {
                 className="group block py-10 md:py-12 border-b border-[var(--hairline)] hover:bg-[rgba(255,255,255,0.015)] transition-colors duration-300"
               >
                 <div className="grid grid-cols-12 gap-6 items-start">
-                  <span className="col-span-2 md:col-span-1 font-mono text-[13px] text-foreground/60 pt-2">
-                    {p.n}
-                  </span>
+                  <div className="col-span-12 md:col-span-6 flex items-start gap-3 md:gap-4">
+                    <span className="font-mono text-[13px] text-foreground/60 pt-2 shrink-0">
+                      {p.n}
+                    </span>
 
-                  <div className="col-span-10 md:col-span-5">
+                    <div className="min-w-0">
                     <h3 className="display-lg leading-none text-foreground">
                       {p.name}
                       {/* Sits beside the name from md up; drops to its own line on
@@ -185,6 +185,7 @@ const FeaturedWorkSection = () => {
                           {t}
                         </span>
                       ))}
+                    </div>
                     </div>
                   </div>
 
@@ -209,9 +210,9 @@ const FeaturedWorkSection = () => {
         {/* Also — secondary project highlights */}
         <div className="mt-10 md:mt-14">
           <div className="hairline mb-8 md:mb-10" />
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
-            <p className="eyebrow col-span-12 md:col-span-2">Also</p>
-            <ul className="col-span-12 md:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-12">
+          <div className="grid grid-cols-12 gap-4 md:gap-5">
+            <p className="eyebrow col-span-12 md:col-span-1">Also</p>
+            <ul className="col-span-12 md:col-span-11 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-12">
               {alsoProjects.map((p) => {
                 const Wrapper = p.link ? 'a' : 'div';
                 const wrapperProps = p.link

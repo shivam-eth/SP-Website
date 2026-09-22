@@ -2,18 +2,18 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import cyclingImage from '../../assets/photo_2025-06-0718.12.07.jpeg';
-import trekkingImage from '../../assets/photo_2025-06-0718.11.49.jpeg';
-import readingImage from '../../assets/photo_2025-06-0718.12.04.jpeg';
-import runningImage from '../../assets/marathon-tuffman-2024.jpeg';
-import footballImage from '../../assets/football.png';
+import cyclingImage from '../../assets/photo_2025-06-0718.12.07.webp';
+import trekkingImage from '../../assets/photo_2025-06-0718.11.49.webp';
+import readingImage from '../../assets/photo_2025-06-0718.12.04.webp';
+import runningImage from '../../assets/marathon-tuffman-2024.webp';
+import footballImage from '../../assets/football.webp';
 
-import gallery1 from '../../assets/photo_2025-06-0718.12.06.jpeg';
-import gallery2 from '../../assets/photo_2025-06-0718.12.03.jpeg';
-import gallery3 from '../../assets/photo_2025-06-0718.11.58.jpeg';
-import gallery4 from '../../assets/photo_2025-06-0718.11.56.jpeg';
-import gallery5 from '../../assets/photo_2025-06-0718.11.54.jpeg';
-import gallery6 from '../../assets/puppy holding.png';
+import gallery1 from '../../assets/photo_2025-06-0718.12.06.webp';
+import gallery2 from '../../assets/photo_2025-06-0718.12.03.webp';
+import gallery3 from '../../assets/photo_2025-06-0718.11.58.webp';
+import gallery4 from '../../assets/photo_2025-06-0718.11.56.webp';
+import gallery5 from '../../assets/photo_2025-06-0718.11.54.webp';
+import gallery6 from '../../assets/puppy-holding.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

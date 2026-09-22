@@ -200,14 +200,8 @@ const ResumePage = () => {
               <ul className="space-y-12 md:space-y-16">
                 {experiences.map((exp) => (
                   <li key={exp.company} className="grid grid-cols-12 gap-2 md:gap-6">
-                    <div className="col-span-12 md:col-span-3">
-                      <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                        {exp.duration}
-                      </p>
-                      <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mt-1">
-                        {exp.location}
-                      </p>
-                    </div>
+                    {/* Role and detail read from the left edge; the dates sit out
+                        on the right so the column of headings stays unbroken. */}
                     <div className="col-span-12 md:col-span-9">
                       <h3 className="text-2xl md:text-3xl text-foreground tracking-tight">
                         {exp.position}
@@ -228,6 +222,14 @@ const ResumePage = () => {
                           </li>
                         ))}
                       </ul>
+                    </div>
+                    <div className="col-span-12 md:col-span-3 md:text-right">
+                      <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                        {exp.duration}
+                      </p>
+                      <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mt-1">
+                        {exp.location}
+                      </p>
                     </div>
                   </li>
                 ))}
