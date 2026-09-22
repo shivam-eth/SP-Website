@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     name: "Vuelo",
-    description: "GenAIPowered Healthcare Assistant (AI + HealthTech)",
+    description: "GenAI-powered Healthcare Assistant (AI + HealthTech)",
     features: [
       "Gathered and refined requirements with external and internal stakeholders, then prepared FRDs, flows, and sprint plans.",
       "Evaluated multiple AI model options and fine-tuned LLMs with curated medical context to reduce hallucinations and improve reliability.",
@@ -137,7 +137,7 @@ export const portfolioItems = [
   },
   {
     title: "Vuelo",
-    description: "GenAIPowered Healthcare Assistant (AI + HealthTech). Gathered & refined requirements with external & internal stakeholders. Evaluated multiple AI model options and fine-tuned LLMs with curated medical context.",
+    description: "GenAI-powered Healthcare Assistant (AI + HealthTech). Gathered & refined requirements with external & internal stakeholders. Evaluated multiple AI model options and fine-tuned LLMs with curated medical context.",
     techStack: ["AI", "HealthTech", "GenAI", "LLM"],
     link: "#"
   },
